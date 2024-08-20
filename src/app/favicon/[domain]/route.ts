@@ -82,11 +82,11 @@ export async function GET(request: NextRequest, { params: { domain } }: { params
       const endTime = Date.now();
       const executionTime = endTime - startTime;
 
-      return new Response(selectedIcon.href, {
+      return new Response(iconBuffer, {
         status: 200,
         headers: {
           'Cache-Control': 'public, max-age=86400',
-          'Content-Type': selectedIcon.href.replace(/data:(image-.*?);.*/, '$1'),
+          'Content-Type': selectedIcon.href.replace(/data:(image.*?);.*/, '$1'),
           'Content-Length': iconBuffer.byteLength.toString(),
           'X-Execution-Time': `${executionTime} ms`, // Add execution time header
         }
