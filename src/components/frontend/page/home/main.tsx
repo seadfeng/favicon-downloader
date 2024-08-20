@@ -1,6 +1,5 @@
 "use client";
 
-import CodeCopyBtn from "@/components/shared/CodeCopyBtn";
 import { Markdown } from "@/components/shared/markdown";
 import { Button } from "@/components/ui/button";
 import {
@@ -18,11 +17,11 @@ import { cn } from "@/lib/utils";
 import { ResponseInfo } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import z from "zod";
 import { Faqs } from "../../shared/faqs";
+import ImageCode from "../../shared/image";
 import { Results } from "./results";
 
 // Regular expression to validate a domain name
@@ -99,10 +98,11 @@ export function Main({
   const [host, setHost] = useState<string | undefined>(undefined);
   const [imageDefaultUrl, setImageDefaultUrl] = useState<string | undefined>(undefined);
   const [imageLargerUrl, setImageLargerUrl] = useState<string | undefined>(undefined);
-
+ 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const currentHost = window.location.host;
+      // const currentHost = window.location.host;
+      const currentHost =  'favicon-3j1.pages.dev';
       setHost(currentHost);
 
       setImageDefaultUrl(`${process.env.NODE_ENV === 'development' ? "http" : "https"}://${currentHost}/favicon/${domain}`);
@@ -132,24 +132,7 @@ export function Main({
       alt: t("frontend.home.larger_size_alt", { domain })
     },
   ];
-
-  const ImageCode = ({ alt, title, src, codeStr }: { src: string; codeStr: string; title: string; alt: string; }) => {
-    return (
-      <div>
-        <h2 className="text-2xl font-semibold">{title}:</h2>
-        <pre className="bg-secondary p-4 rounded-md flex items-center overflow-hidden relative my-5">
-          <code className="text-sm">
-            {codeStr}
-          </code>
-          <CodeCopyBtn>{codeStr}</CodeCopyBtn>
-        </pre>
-        <div className="text-xl">{t('frontend.home.rendered')}:</div> 
-        <div className="max-w-[300px] my-5">
-          <Image layout="intrinsic" alt={alt} width={100} height={100} className="bg-secondary rounded-md" src={src} loading="lazy" />
-        </div>
-      </div>
-    );
-  };
+ 
 
   return (
     <div className={cn("max-w-4xl mx-auto w-full leading-9 text-base")}> 
@@ -179,8 +162,7 @@ export function Main({
       </Form>
       {error && <div className="rounded-md border border-red-500 p-10 mb-10">{error}</div>}
       {fetching && <Skeleton className="h-72 w-full rounded-md mb-8" />}  
-      {info && <Results info={info} />} 
-
+      {info && <Results info={info} />}  
       {host && images.map(image => <ImageCode {...image} key={image.src} />)} 
       {block1 && <Markdown content={block1} className="mt-10" />}
       <Faqs faqs={faqs} title={t('frontend.home.faq.title')} />

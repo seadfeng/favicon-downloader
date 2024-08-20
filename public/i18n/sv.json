@@ -3,14 +3,24 @@
     "home": {
       "faq": {
         "qa4": {
-          "question": "Kan jag använda favoritikonerna jag laddar ner för min egen webbplats?"
+          "question": "Kan jag använda favoritikonerna jag laddar ner för min egen webbplats?",
+          "answer": "Även om FaviconExtractor gör det enkelt att ladda ner favoritikoner, är det viktigt att respektera upphovsrättslagarna. \nFavoritikonerna du laddar ner ägs vanligtvis av deras respektive webbplatser. \nOm du använder en nedladdad favicon för något annat än personlig referens, se till att du har tillstånd från den ursprungliga webbplatsägaren."
         },
         "qa2": {
           "answer": "Ja, FaviconExtractor är helt gratis att använda. \nDet finns inga dolda avgifter eller prenumerationsavgifter.",
           "question": "Är FaviconExtractor gratis att använda?"
         },
         "qa1": {
-          "answer": "Om FaviconExtractor inte kan hitta en favicon för en webbplats, lämnar den dig inte bara tomhänt. \nIstället genererar den automatiskt en anpassad SVG-ikon med den första bokstaven i domännamnet. \nDetta säkerställer att du alltid får en användbar ikon, även när en webbplats inte har satt upp sin egen favicon. \nSå här händer:\n\n\n1. FaviconExtractor söker efter webbplatsens favicon.\n\n2. Om ingen favoritikon hittas skapar den en enkel, attraktiv SVG-ikon.\n\n3. SVG-ikonen visar den första bokstaven i domännamnet.\n\n4. Den här genererade ikonen är sedan tillgänglig för nedladdning och användning, precis som en vanlig favoritikon.\n\n\nDen här funktionen är särskilt användbar för:\n\n- Platshållarikoner medan du utvecklar en webbplats\n\n- Upprätthålla ett konsekvent utseende i dina bokmärken eller applikationer, även för webbplatser utan favoritikoner\n\n- Skapa snabbt enkla bokstavsbaserade ikoner för olika ändamål\n\n\nKom ihåg att även om den här genererade ikonen är gratis att använda, är det alltid bäst att skapa en anpassad favicon för dina egna webbplatser för att förbättra varumärkeskännedomen och användarupplevelsen."
+          "answer": "Om FaviconExtractor inte kan hitta en favicon för en webbplats, lämnar den dig inte bara tomhänt. \nIstället genererar den automatiskt en anpassad SVG-ikon med den första bokstaven i domännamnet. \nDetta säkerställer att du alltid får en användbar ikon, även när en webbplats inte har satt upp sin egen favicon. \nSå här händer:\n\n\n1. FaviconExtractor söker efter webbplatsens favicon.\n\n2. Om ingen favoritikon hittas skapar den en enkel, attraktiv SVG-ikon.\n\n3. SVG-ikonen visar den första bokstaven i domännamnet.\n\n4. Den här genererade ikonen är sedan tillgänglig för nedladdning och användning, precis som en vanlig favoritikon.\n\n\nDen här funktionen är särskilt användbar för:\n\n- Platshållarikoner medan du utvecklar en webbplats\n\n- Upprätthålla ett konsekvent utseende i dina bokmärken eller applikationer, även för webbplatser utan favoritikoner\n\n- Skapa snabbt enkla bokstavsbaserade ikoner för olika ändamål\n\n\nKom ihåg att även om den här genererade ikonen är gratis att använda, är det alltid bäst att skapa en anpassad favicon för dina egna webbplatser för att förbättra varumärkeskännedomen och användarupplevelsen.",
+          "question": "Vad händer om en webbplats inte har en favoritikon?"
+        },
+        "qa3": {
+          "question": "Vilka faviconstorlekar kan jag ladda ner?",
+          "answer": "FaviconExtractor söker dynamiskt efter alla tillgängliga favicon-storlekar på en given webbplats. \nStorlekarna kan variera från 16x16 pixlar upp till 512x512 pixlar eller ännu större, beroende på vad webbplatsen erbjuder."
+        },
+        "qa5": {
+          "question": "Kan jag kolla flera webbplatser samtidigt?",
+          "answer": "För närvarande kontrollerar FaviconExtractor en webbplats i taget. \nFör masskontroller måste du ange varje domän separat."
         }
       }
     }

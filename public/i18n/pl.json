@@ -3,7 +3,8 @@
     "home": {
       "faq": {
         "qa5": {
-          "answer": "Obecnie FaviconExtractor sprawdza jedną witrynę na raz. \nW przypadku kontroli zbiorczych musisz wprowadzić każdą domenę osobno."
+          "answer": "Obecnie FaviconExtractor sprawdza jedną witrynę na raz. \nW przypadku kontroli zbiorczych musisz wprowadzić każdą domenę osobno.",
+          "question": "Czy mogę sprawdzać wiele stron internetowych jednocześnie?"
         },
         "qa4": {
           "answer": "Chociaż FaviconExtractor ułatwia pobieranie ulubionych ikon, ważne jest przestrzeganie praw autorskich. \nPobrane ikony ulubionych są zazwyczaj własnością odpowiednich witryn internetowych. \nJeśli używasz pobranej favikony do celów innych niż osobiste, upewnij się, że masz pozwolenie od pierwotnego właściciela witryny.",
@@ -14,7 +15,12 @@
           "question": "Czy korzystanie z FaviconExtractor jest darmowe?"
         },
         "qa1": {
-          "answer": "Jeśli FaviconExtractor nie może znaleźć favikony dla witryny internetowej, nie pozostawia Cię to z pustymi rękami. \nZamiast tego automatycznie generuje niestandardową ikonę SVG, używając pierwszej litery nazwy domeny. \nDzięki temu zawsze otrzymasz użyteczną ikonę, nawet jeśli witryna nie ma skonfigurowanej własnej favikony. \nOto, co się dzieje:\n\n\n1. FaviconExtractor wyszukuje favikonę witryny.\n\n2. Jeśli nie zostanie znaleziona żadna favikona, utworzy się prosta, atrakcyjna ikona SVG.\n\n3. Ikona SVG zawiera pierwszą literę nazwy domeny.\n\n4. Wygenerowaną ikonę można następnie pobrać i używać, podobnie jak zwykłą favikonę.\n\n\nTa funkcja jest szczególnie przydatna w przypadku:\n\n- Ikony zastępcze podczas tworzenia witryny internetowej\n\n- Utrzymanie spójnego wyglądu zakładek i aplikacji, nawet w przypadku witryn bez ulubionych\n\n- Szybkie tworzenie prostych ikon opartych na literach do różnych celów\n\n\nPamiętaj, że chociaż korzystanie z tej wygenerowanej ikony jest bezpłatne, zawsze najlepiej jest utworzyć niestandardową favikonę dla własnych witryn internetowych, aby zwiększyć rozpoznawalność marki i wygodę użytkownika."
+          "answer": "Jeśli FaviconExtractor nie może znaleźć favikony dla witryny internetowej, nie pozostawia Cię to z pustymi rękami. \nZamiast tego automatycznie generuje niestandardową ikonę SVG, używając pierwszej litery nazwy domeny. \nDzięki temu zawsze otrzymasz użyteczną ikonę, nawet jeśli witryna nie ma skonfigurowanej własnej favikony. \nOto, co się dzieje:\n\n\n1. FaviconExtractor wyszukuje favikonę witryny.\n\n2. Jeśli nie zostanie znaleziona żadna favikona, utworzy się prosta, atrakcyjna ikona SVG.\n\n3. Ikona SVG zawiera pierwszą literę nazwy domeny.\n\n4. Wygenerowaną ikonę można następnie pobrać i używać, podobnie jak zwykłą favikonę.\n\n\nTa funkcja jest szczególnie przydatna w przypadku:\n\n- Ikony zastępcze podczas tworzenia witryny internetowej\n\n- Utrzymanie spójnego wyglądu zakładek i aplikacji, nawet w przypadku witryn bez ulubionych\n\n- Szybkie tworzenie prostych ikon opartych na literach do różnych celów\n\n\nPamiętaj, że chociaż korzystanie z tej wygenerowanej ikony jest bezpłatne, zawsze najlepiej jest utworzyć niestandardową favikonę dla własnych witryn internetowych, aby zwiększyć rozpoznawalność marki i wygodę użytkownika.",
+          "question": "Co jeśli witryna nie ma favikony?"
+        },
+        "qa3": {
+          "question": "Jakie rozmiary favikon mogę pobrać?",
+          "answer": "FaviconExtractor dynamicznie sprawdza wszystkie dostępne rozmiary favikon na danej stronie. \nRozmiary mogą wynosić od 16 x 16 pikseli do 512 x 512 pikseli lub nawet większe, w zależności od oferty witryny."
         }
       }
     }

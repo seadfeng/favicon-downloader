@@ -7,7 +7,20 @@
           "question": "L'utilisation de FaviconExtractor est-elle gratuite ?"
         },
         "qa1": {
-          "answer": "Si FaviconExtractor ne trouve pas de favicon pour un site Web, il ne vous laisse pas les mains vides. \nAu lieu de cela, il génère automatiquement une icône SVG personnalisée en utilisant la première lettre du nom de domaine. \nCela garantit que vous obtenez toujours une icône utilisable, même lorsqu'un site Web n'a pas configuré son propre favicon. \nVoici ce qui se passe :\n\n\n1. FaviconExtractor recherche le favicon du site Web.\n\n2. Si aucun favicon n'est trouvé, une icône SVG simple et attrayante est créée.\n\n3. L'icône SVG présente la première lettre du nom de domaine.\n\n4. Cette icône générée est ensuite disponible pour téléchargement et utilisation, tout comme une favicon classique.\n\n\nCette fonctionnalité est particulièrement utile pour :\n\n- Icônes d'espace réservé pendant que vous développez un site Web\n\n- Maintenir une apparence cohérente dans vos favoris ou applications, même pour les sites sans favicons\n\n- Création rapide d'icônes simples basées sur des lettres à des fins diverses\n\n\nN'oubliez pas que même si l'utilisation de cette icône générée est gratuite, il est toujours préférable de créer une favicon personnalisée pour vos propres sites Web afin d'améliorer la reconnaissance de la marque et l'expérience utilisateur."
+          "answer": "Si FaviconExtractor ne trouve pas de favicon pour un site Web, il ne vous laisse pas les mains vides. \nAu lieu de cela, il génère automatiquement une icône SVG personnalisée en utilisant la première lettre du nom de domaine. \nCela garantit que vous obtenez toujours une icône utilisable, même lorsqu'un site Web n'a pas configuré son propre favicon. \nVoici ce qui se passe :\n\n\n1. FaviconExtractor recherche le favicon du site Web.\n\n2. Si aucun favicon n'est trouvé, une icône SVG simple et attrayante est créée.\n\n3. L'icône SVG présente la première lettre du nom de domaine.\n\n4. Cette icône générée est ensuite disponible pour téléchargement et utilisation, tout comme une favicon classique.\n\n\nCette fonctionnalité est particulièrement utile pour :\n\n- Icônes d'espace réservé pendant que vous développez un site Web\n\n- Maintenir une apparence cohérente dans vos favoris ou applications, même pour les sites sans favicons\n\n- Création rapide d'icônes simples basées sur des lettres à des fins diverses\n\n\nN'oubliez pas que même si l'utilisation de cette icône générée est gratuite, il est toujours préférable de créer une favicon personnalisée pour vos propres sites Web afin d'améliorer la reconnaissance de la marque et l'expérience utilisateur.",
+          "question": "Que faire si un site Web n'a pas de favicon ?"
+        },
+        "qa3": {
+          "question": "Quelles tailles de favicon puis-je télécharger ?",
+          "answer": "FaviconExtractor vérifie dynamiquement toutes les tailles de favicon disponibles sur un site Web donné. \nLes tailles peuvent aller de 16x16 pixels à 512x512 pixels ou même plus, selon ce que propose le site Web."
+        },
+        "qa4": {
+          "answer": "Bien que FaviconExtractor facilite le téléchargement de favicons, il est important de respecter les lois sur les droits d'auteur. \nLes favicons que vous téléchargez appartiennent généralement à leurs sites Web respectifs. \nSi vous utilisez un favicon téléchargé à des fins autres que personnelles, assurez-vous d'avoir l'autorisation du propriétaire d'origine du site Web.",
+          "question": "Puis-je utiliser les favicons que je télécharge pour mon propre site Web ?"
+        },
+        "qa5": {
+          "question": "Puis-je consulter plusieurs sites Web à la fois ?",
+          "answer": "Actuellement, FaviconExtractor vérifie un site Web à la fois. \nPour les vérifications groupées, vous devrez saisir chaque domaine séparément."
         }
       }
     }
