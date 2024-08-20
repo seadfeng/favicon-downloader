@@ -1,4 +1,4 @@
-# Redirect Checker: Github Actions Guide
+# Favicon Downloader: Github Actions Guide
 
 GitHub Actions is a CI/CD platform provided by GitHub that allows developers to automate their software development workflows. It enables you to define and automate tasks such as building, testing, and deploying code directly within your GitHub repository.
 
@@ -19,7 +19,7 @@ GitHub Actions is a CI/CD platform provided by GitHub that allows developers to 
 
 GitHub Actions helps streamline development workflows, reduce manual errors, and ensure that code is thoroughly tested before deployment.
 
-## Environment for Redirect Checker Github Actions
+## Environment for Favicon Downloader Github Actions
 
 ### Cloudflare Account ID
 
@@ -63,9 +63,9 @@ GitHub Actions helps streamline development workflows, reduce manual errors, and
 
 ![Git Repository Actions](images/git-actions.png) 
 
-After the Action is completed, go to Cloudflare Workers & Pages and find the project named redirectchecker.
+After the Action is completed, go to Cloudflare Workers & Pages and find the project named `favicon`.
 
-![Conf](images/redirectchecker-pages.png)
+![Conf](images/favicon-pages.png)
 
 
 ### Custom domains

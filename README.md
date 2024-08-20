@@ -22,7 +22,7 @@ To set up the Redirect Checker project locally, follow these steps:
 1. Clone the repository:
 
 ```sh
-git clone https://github.com/seadfeng/redirect-checker.git
+git clone https://github.com/seadfeng/favicon-downloader.git
 cd redirect-checker
 ```
 
@@ -177,7 +177,7 @@ We welcome contributions to the Redirect Checker project. Please feel free to su
 
 ## About
 
-Redirect Checker is maintained by [seadfeng](https://github.com/seadfeng). For more information, visit the [project homepage](https://redirectchecker.org/).
+Redirect Checker is maintained by [seadfeng](https://github.com/seadfeng). For more information, visit the [project homepage](https://www.faviconextractor.com/).
 
 ## Tags
 
