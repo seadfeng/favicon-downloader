@@ -176,7 +176,7 @@ For detailed instructions, see [this guide](doc/workflows.md)
 
 ## Contributing
 
-We welcome contributions to the Redirect Checker project. Please feel free to submit issues, feature requests, or pull requests.
+We welcome contributions to the Favicon Downloader project. Please feel free to submit issues, feature requests, or pull requests.
 
 ## License
 
@@ -184,5 +184,5 @@ We welcome contributions to the Redirect Checker project. Please feel free to su
 
 ## About
 
-Redirect Checker is maintained by [seadfeng](https://github.com/seadfeng). For more information, visit the [project homepage](https://www.faviconextractor.com/).
+Favicon Downloader is maintained by [seadfeng](https://github.com/seadfeng). For more information, visit the [project homepage](https://www.faviconextractor.com/).
 
