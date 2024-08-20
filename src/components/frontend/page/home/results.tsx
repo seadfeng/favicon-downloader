@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 export const Results =({info}:{info: ResponseInfo; })=>{   
   const t = useTranslations();
   return( 
-    <div className="bg-secondary/60 p-5 text-xl flex flex-col gap-5 mb-10">
+    <div className="bg-secondary/60 p-5 text-xl flex flex-col gap-5 mb-10 rounded-md">
       <div className="font-semibold flex items-center">{t('frontend.home.results_for')}: {info.host} <SearchCheckIcon size={28} className="ml-2 text-green-700" /></div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
       {info.icons.map((icon, index) =>

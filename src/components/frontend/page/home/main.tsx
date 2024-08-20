@@ -18,6 +18,7 @@ import { cn } from "@/lib/utils";
 import { ResponseInfo } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import z from "zod";
@@ -144,7 +145,7 @@ export function Main({
         </pre>
         <div className="text-xl">{t('frontend.home.rendered')}:</div> 
         <div className="max-w-[300px] my-5">
-          <img alt={alt} className="min-h-[100px] min-w-[100px] bg-secondary rounded-md" src={src} />
+          <Image alt={alt} layout="responsive" width={100} height={100} className="bg-secondary rounded-md" src={src} />
         </div>
       </div>
     );
