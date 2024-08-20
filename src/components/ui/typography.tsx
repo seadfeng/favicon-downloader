@@ -9,7 +9,7 @@ const classNames ={
   blockquote: "mt-6 border-l-2 pl-6 italic", 
   ul: "my-6 [&>li]:mt-2",
   ol: "my-6 [&>li]:mt-2",
-  code: "relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold",
+  code: "relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm",
   lead: "text-xl text-muted-foreground",
   small: "text-sm font-medium leading-none",
   table:{
