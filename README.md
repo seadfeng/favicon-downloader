@@ -71,8 +71,15 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to see the r
 - **Perfect for Research**: Ideal for competitive analysis or inspiration for your own favicon designs.
 - **Developer-Friendly**: Get HTML code snippets for quick implementation in your projects.
 
-## Free API
- 
+## Free Favicon  API
+
+Fetches favicons from multiple sources:
+
+- Web Scraper
+- Google Favicons
+- DuckDuckGo Icons
+
+The API intelligently selects the best source from these options, ensuring reliable and comprehensive favicon retrieval.
 
 ```sh
 curl https://www.faviconextractor.com/api/proxysites.ai --header 'Content-Type: application/json'
