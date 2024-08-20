@@ -5,12 +5,12 @@ const defaultLocale = "en" as const;
 export type LocaleType = typeof locales[number];
 
 export const appConfig = {
-  appDomain: process.env.NODE_ENV === 'development' ? "127.0.0.1:3000" : "faviconextractor.com",
+  appDomain: process.env.NODE_ENV === 'development' ? "127.0.0.1:3000" : "www.faviconextractor.com",
   appRootDomain: "faviconextractor.com",
   appName: "FaviconExtractor.com",
   appDescription: "FaviconExtractor",
   gaId: process.env.NEXT_PUBLIC_GA_ID,
-  origin: process.env.NODE_ENV === "development" ? "http://127.0.0.1:3000" : "https://redirectcheck.pages.dev",
+  origin: process.env.NODE_ENV === "development" ? "http://127.0.0.1:3000" : "https://www.faviconextractor.com",
   i18n: {
     locales,
     defaultLocale,
