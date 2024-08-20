@@ -82,7 +82,7 @@ Fetches favicons from multiple sources:
 The API intelligently selects the best source from these options, ensuring reliable and comprehensive favicon retrieval.
 
 ```sh
-curl https://www.faviconextractor.com/api/proxysites.ai --header 'Content-Type: application/json'
+curl https://www.faviconextractor.com/api/favicon/proxysites.ai
 ``` 
 
 Output JSON

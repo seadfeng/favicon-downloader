@@ -88,7 +88,7 @@ export async function GET(request: NextRequest, { params }: { params: { domain: 
       }
 
       const duration = ((Date.now() - startTime) / 1000).toFixed(3);
-      return new Response(JSON.stringify({ url, host: new URL(url).host, status: response.status, statusText: response.statusText, icons, duration }, null, 2), {
+      return new Response(JSON.stringify({ url, host: new URL(url).host, status: response.status, statusText: response.statusText, icons, duration: `${duration} s` }, null, 2), {
         status: response.status,
         statusText: response.statusText,
         headers: { 'Content-Type': 'application/json' }
