@@ -17,13 +17,13 @@ FaviconExtractor is a powerful, free online tool that allows you to instantly ch
 
 ## Installation
 
-To set up the Redirect Checker project locally, follow these steps:
+To set up the Favicon Downloader project locally, follow these steps:
 
 1. Clone the repository:
 
 ```sh
 git clone https://github.com/seadfeng/favicon-downloader.git
-cd redirect-checker
+cd favicon-downloader
 ```
 
 2. Install dependencies:

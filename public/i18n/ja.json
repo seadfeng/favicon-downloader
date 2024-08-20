@@ -12,8 +12,6 @@
       "h1": "あらゆる Web サイトからファビコンを即座にダウンロードして抽出します",
       "sub_to_h1": "ウェブサイトからファビコンをダウンロード",
       "results_for": "の結果",
-      "no_redirects_found": "リダイレクトが見つかりません。",
-      "redirect_chain": "リダイレクトチェーン",
       "status": "状態",
       "final_destination": "最終目的地",
       "check": "チェック",
