@@ -18,8 +18,8 @@ const fontMono = FontMono({
   variable: "--font-mono",
 })
 
-export async function generateMetadata(locale: LocaleType): Promise<Metadata> { 
-  const t = await getTranslations(locale); 
+export async function generateMetadata({ params }:{ params: any }): Promise<Metadata> { 
+  const t = await getTranslations(params); 
   return {
     title: {
       absolute: t('frontend.meta.default.title'),
