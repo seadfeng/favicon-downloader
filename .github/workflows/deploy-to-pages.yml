@@ -1,0 +1,33 @@
+name: Deploy Pages
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy_production:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    name: Publish to Cloudflare Pages
+    timeout-minutes: 10
+    environment:
+      name: production
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm install
+      - name: Deploy to Cloudflare Pages
+        run: |
+          response=$(curl -s -o /dev/null -w "%{http_code}" -X GET "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CLOUDFLARE_ACCOUNT_ID }}/pages/projects/favicon" \
+            -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}")
+          if [ $response -eq 404 ]; then
+            echo "Project does not exist, creating..."
+            npx wrangler pages project create favicon --production-branch main
+          else
+            echo "Project exists, skipping creation."
+          fi
+          npm run deploy 
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

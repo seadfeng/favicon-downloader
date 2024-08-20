@@ -1,0 +1,56 @@
+{
+  "frontend": {
+    "go_to_homepage": "Go to homepage",
+    "page_not_found": "Page not found",
+    "meta": {
+      "default": {
+        "title": "Download Favicon from Website | Instant Extractor",
+        "description": "Easily download favicon from any website. Extract favicons in multiple sizes. Fast, free tool for developers, designers, and webmasters."
+      }
+    },
+    "home": {
+      "h1": "Instantly download and extract favicons from any website",
+      "sub_to_h1": "Download Favicon from Website",
+      "results_for": "Favicons For",
+      "no_redirects_found": "No redirects found.",
+      "redirect_chain": "Redirect Chain",
+      "status": "Status",
+      "final_destination": "Final Destination",
+      "check": "Check",
+      "faq": {
+        "qa1": {
+          "question": "What if a website doesn't have a favicon?",
+          "answer": "If FaviconExtractor can't find a favicon for a website, it doesn't just leave you empty-handed. Instead, it automatically generates a custom SVG icon using the first letter of the domain name. This ensures that you always get a usable icon, even when a website hasn't set up their own favicon. Here's what happens:\n\n1. FaviconExtractor searches for the website's favicon.\n2. If no favicon is found, it creates a simple, attractive SVG icon.\n3. The SVG icon features the first letter of the domain name.\n4. This generated icon is then available for download and use, just like a regular favicon.\n\nThis feature is particularly useful for:\n- Placeholder icons while you're developing a website\n- Maintaining a consistent look in your bookmarks or applications, even for sites without favicons\n- Quickly creating simple letter-based icons for various purposes\n\nRemember, while this generated icon is free to use, it's always best to create a custom favicon for your own websites to enhance brand recognition and user experience."
+        },
+        "qa2": {
+          "question": "Is FaviconExtractor free to use?",
+          "answer": "Yes, FaviconExtractor is completely free to use. There are no hidden charges or subscription fees.\n"
+        },
+        "qa3": {
+          "question": "What favicon sizes can I download?",
+          "answer": "FaviconExtractor dynamically checks for all available favicon sizes on a given website. The sizes can range from 16x16 pixels up to 512x512 pixels or even larger, depending on what the website offers.\n"
+        },
+        "qa4": {
+          "question": "Can I use the favicons I download for my own website?",
+          "answer": "While FaviconExtractor makes it easy to download favicons, it's important to respect copyright laws. The favicons you download are typically owned by their respective websites. If you're using a downloaded favicon for anything other than personal reference, make sure you have permission from the original website owner.\n\n"
+        },
+        "qa5": {
+          "question": "Can I check multiple websites at once?",
+          "answer": "Currently, FaviconExtractor checks one website at a time. For bulk checks, you'll need to enter each domain separately.\n"
+        },
+        "title": "Frequently Asked Questions"
+      },
+      "duration": "Duration",
+      "download": "Download",
+      "rendered": "Rendered",
+      "default_size": "Default Size",
+      "default_size_alt": "{domain} favicon",
+      "larger_size_alt": "{domain} favicon larger",
+      "larger_size": "Larger Size"
+    }
+  },
+  "shared": {
+    "desktop": "Desktop",
+    "mobile": "Mobile"
+  }
+}

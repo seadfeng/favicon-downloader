@@ -1,0 +1,54 @@
+{
+  "frontend": {
+    "go_to_homepage": "Go to homepage",
+    "page_not_found": "Page not found",
+    "meta": {
+      "default": {
+        "title": "Ladda ner Favicon från Webbplats | Omedelbar Utdragare",
+        "description": "Ladda enkelt ner favicons från vilken webbplats som helst. Extrahera favicons i flera storlekar. Snabbt, gratis verktyg för utvecklare, designers och webmasters."
+      }
+    },
+    "home": {
+      "h1": "Ladda ner och extrahera favoritikoner direkt från vilken webbplats som helst",
+      "sub_to_h1": "Ladda ner Favicon från webbplatsen",
+      "results_for": "Favoriter för",
+      "no_redirects_found": "Inga omdirigeringar hittades.",
+      "redirect_chain": "Omdirigera kedja",
+      "status": "Status",
+      "final_destination": "Slutdestination",
+      "check": "Kontrollera",
+      "faq": {
+        "qa1": {
+          "question": "Vad händer om en webbplats inte har någon favicon?",
+          "answer": "Om FaviconExtractor inte kan hitta en favicon för en webbplats lämnar det dig inte tomhänt. Istället genererar det automatiskt en anpassad SVG-ikon med den första bokstaven i domännamnet. Detta säkerställer att du alltid får en användbar ikon, även när en webbplats inte har ställt in sin egen favicon. Så här fungerar det:\n\n1. FaviconExtractor söker efter webbplatsens favicon.\n2. Om ingen favicon hittas skapar det en enkel och attraktiv SVG-ikon.\n3. SVG-ikonen innehåller den första bokstaven i domännamnet.\n4. Denna genererade ikon är sedan tillgänglig för nedladdning och användning, precis som en vanlig favicon.\n\nDenna funktion är särskilt användbar för:\n- Platshållarikoner medan du utvecklar en webbplats\n- Att upprätthålla ett konsekvent utseende i dina bokmärken eller applikationer, även för webbplatser utan favicons\n- Snabbt skapa enkla bokstavsbaserade ikoner för olika ändamål\n\nKom ihåg att även om den genererade ikonen är gratis att använda, är det alltid bäst att skapa en egen favicon för dina egna webbplatser för att förbättra varumärkesigenkänning och användarupplevelse.\n"
+        },
+        "qa2": {
+          "question": "Stöder verktyget internationella URL:er?",
+          "answer": "Ja, FaviconExtractor är helt gratis att använda. Det finns inga dolda avgifter eller prenumerationskostnader.\n"
+        },
+        "qa3": {
+          "question": "Vilka favicon-storlekar kan jag ladda ner?\n",
+          "answer": "FaviconExtractor kontrollerar dynamiskt alla tillgängliga favicon-storlekar på en given webbplats. Storlekarna kan variera från 16x16 pixlar upp till 512x512 pixlar eller ännu större, beroende på vad webbplatsen erbjuder.\n"
+        },
+        "qa4": {
+          "question": "Kan jag använda de favicons jag laddar ner för min egen webbplats?\n",
+          "answer": "Även om FaviconExtractor gör det enkelt att ladda ner favicons är det viktigt att respektera upphovsrättslagar. De favicons du laddar ner ägs vanligtvis av deras respektive webbplatser. Om du använder en nedladdad favicon för något annat än personlig referens, se till att du har tillstånd från den ursprungliga webbplatsens ägare.\n"
+        },
+        "qa5": {
+          "question": "Kan detta verktyg hjälpa mig att hitta trasiga omdirigeringar?",
+          "answer": "Ja, verktyget identifierar alla trasiga länkar i omdirigeringskedjan och visar dig HTTP-statuskoden (som 404 för \"Ej hittad\") där kedjan bryts."
+        },
+        "title": "Vanliga frågor"
+      },
+      "duration": "Varaktighet",
+      "download": "Ladda ner",
+      "rendered": "Rensat",
+      "default_size": "Standardstorlek",
+      "larger_size": "Större storlek"
+    }
+  },
+  "shared": {
+    "desktop": "Skrivbord",
+    "mobile": "Mobil"
+  }
+}

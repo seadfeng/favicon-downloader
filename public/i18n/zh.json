@@ -1,0 +1,42 @@
+{
+  "shared": {
+    "mobile": "移动",
+    "desktop": "桌面"
+  },
+  "frontend": {
+    "home": {
+      "duration": "时长",
+      "results_for": "网站图标",
+      "download": "下载",
+      "rendered": "渲染的",
+      "default_size": "默认尺寸",
+      "h1": "立即从任何网站下载并提取网站图标",
+      "sub_to_h1": "从网站下载网站图标",
+      "larger_size": "较大尺寸",
+      "faq": {
+        "qa1": {
+          "question": "Bir web sitesinde favicon yoksa ne olur?",
+          "answer": "如果 FaviconExtractor 找不到网站的 Favicon，它不会让你失望。相反，它会自动生成一个使用域名首字母的自定义 SVG 图标。这确保了即使网站没有设置自己的 Favicon，你也能获得可用的图标。以下是具体步骤：\n\n1. FaviconExtractor 搜索网站的 Favicon。\n2. 如果找不到 Favicon，它会创建一个简单且美观的 SVG 图标。\n3. SVG 图标包含域名的首字母。\n4. 生成的图标可供下载和使用，像普通的 Favicon 一样。\n\n此功能特别适用于：\n- 开发网站时的占位符图标\n- 即使是没有 Favicon 的网站，也能在书签或应用程序中保持一致的外观\n- 快速创建基于字母的简单图标以供各种用途\n\n请记住，尽管此生成的图标可免费使用，但最好为自己的网站创建自定义 Favicon，以提升品牌识别度和用户体验。\n"
+        },
+        "qa2": {
+          "question": "FaviconExtractor 是免费使用的吗？\n",
+          "answer": "是的，FaviconExtractor 完全免费使用。没有隐藏费用或订阅费。\n"
+        },
+        "qa3": {
+          "question": "我可以下载哪些尺寸的图标？\n",
+          "answer": "FaviconExtractor 会动态检查给定网站上所有可用的图标尺寸。尺寸范围可以从 16x16 像素到 512x512 像素甚至更大，具体取决于网站提供的内容。\n"
+        },
+        "qa4": {
+          "question": "我可以将下载的图标用于自己的网站吗？\n",
+          "answer": "虽然 FaviconExtractor 使下载图标变得简单，但尊重版权法是很重要的。您下载的图标通常归各自的网站所有。如果您打算将下载的图标用于个人参考之外的用途，请确保获得原网站所有者的许可。\n"
+        }
+      }
+    },
+    "meta": {
+      "default": {
+        "title": "从网站下载图标 | 图标提取器",
+        "description": "Herhangi bir web sitesinden kolayca favicon indirin. Farklı boyutlarda favicons çıkarın. Geliştiriciler, tasarımcılar ve web yöneticileri için hızlı ve ücretsiz araç."
+      }
+    }
+  }
+}

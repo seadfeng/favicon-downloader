@@ -1,0 +1,54 @@
+{
+  "frontend": {
+    "go_to_homepage": "Go to homepage",
+    "page_not_found": "Page not found",
+    "meta": {
+      "default": {
+        "title": "Télécharger le Favicon du Site Web | Extracteur Instantané",
+        "description": "Téléchargez facilement des favicons à partir de n'importe quel site web. Extrayez des favicons dans plusieurs tailles. Outil rapide et gratuit pour les développeurs, les designers et les webmasters."
+      }
+    },
+    "home": {
+      "h1": "Téléchargez et extrayez instantanément les favicons de n'importe quel site Web",
+      "sub_to_h1": "Téléchargez Favicon depuis le site Web",
+      "results_for": "Icônes de favoris pour",
+      "no_redirects_found": "Aucune redirection trouvée.",
+      "redirect_chain": "Chaîne de redirection",
+      "status": "Statut",
+      "final_destination": "Destination finale",
+      "check": "Vérifier",
+      "faq": {
+        "qa1": {
+          "question": "Que se passe-t-il si un site web n'a pas de favicon ?",
+          "answer": "Si FaviconExtractor ne trouve pas de favicon pour un site Web, il ne vous laisse pas les mains vides. Au lieu de cela, il génère automatiquement une icône SVG personnalisée en utilisant la première lettre du nom de domaine. Cela garantit que vous obtenez toujours une icône utilisable, même lorsqu'un site Web n'a pas configuré son propre favicon. Voici comment cela fonctionne :\n\n1. FaviconExtractor recherche le favicon du site Web.\n2. Si aucun favicon n'est trouvé, il crée une icône SVG simple et attrayante.\n3. L'icône SVG présente la première lettre du nom de domaine.\n4. Cette icône générée est ensuite disponible pour téléchargement et utilisation, comme un favicon ordinaire.\n\nCette fonctionnalité est particulièrement utile pour :\n- Les icônes de remplacement pendant que vous développez un site Web\n- Maintenir une apparence cohérente dans vos signets ou applications, même pour les sites sans favicons\n- Créer rapidement des icônes simples basées sur des lettres pour divers usages\n\nN'oubliez pas que bien que cette icône générée soit gratuite, il est toujours préférable de créer un favicon personnalisé pour vos propres sites Web afin d'améliorer la reconnaissance de la marque et l'expérience utilisateur.\n"
+        },
+        "qa2": {
+          "question": "FaviconExtractor est-il gratuit à utiliser ?\n",
+          "answer": "Oui, FaviconExtractor est entièrement gratuit. Il n'y a pas de frais cachés ni de frais d'abonnement.\n"
+        },
+        "qa3": {
+          "question": "Quelles tailles de favicon puis-je télécharger?\n",
+          "answer": "FaviconExtractor vérifie dynamiquement toutes les tailles de favicon disponibles sur un site web donné. Les tailles peuvent varier de 16x16 pixels à 512x512 pixels, voire plus grandes, en fonction de ce que propose le site web.\n"
+        },
+        "qa4": {
+          "question": "Puis-je utiliser les favicons que je télécharge pour mon propre site web ?\n",
+          "answer": "Bien que FaviconExtractor facilite le téléchargement des favicons, il est important de respecter les lois sur les droits d'auteur. Les favicons que vous téléchargez sont généralement la propriété de leurs sites web respectifs. Si vous utilisez un favicon téléchargé pour autre chose que pour votre propre référence, assurez-vous d'avoir la permission du propriétaire du site web d'origine.\n"
+        },
+        "qa5": {
+          "question": "Cet outil peut-il m'aider à trouver des redirections cassées ?",
+          "answer": "Oui, l'outil identifiera tous les liens brisés dans la chaîne de redirection et vous montrera le code d'état HTTP (comme 404 pour \"Non trouvé\") où la chaîne se casse."
+        },
+        "title": "Foire aux questions"
+      },
+      "duration": "Durée",
+      "download": "Télécharger",
+      "rendered": "Rendu",
+      "default_size": "Taille par défaut",
+      "larger_size": "Plus grande taille"
+    }
+  },
+  "shared": {
+    "mobile": "Mobile",
+    "desktop": "Bureau"
+  }
+}

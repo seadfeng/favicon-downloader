@@ -1,0 +1,54 @@
+{
+  "frontend": {
+    "go_to_homepage": "Go to homepage",
+    "page_not_found": "Page not found",
+    "meta": {
+      "default": {
+        "title": "Favicon von der Website herunterladen | Sofort-Extraktor\n",
+        "description": "Téléchargez facilement des favicons à partir de n'importe quel site web. Extrayez des favicons dans plusieurs tailles. Outil rapide et gratuit pour les développeurs, les designers et les webmasters."
+      }
+    },
+    "home": {
+      "h1": "Laden Sie Favicons sofort von jeder Website herunter und extrahieren Sie sie",
+      "sub_to_h1": "Laden Sie Favicon von der Website herunter",
+      "results_for": "Favoriten für",
+      "no_redirects_found": "Keine Weiterleitungen gefunden.",
+      "redirect_chain": "Weiterleitungskette",
+      "status": "Status",
+      "final_destination": "Endziel",
+      "check": "Überprüfen",
+      "faq": {
+        "qa1": {
+          "question": "Was passiert, wenn eine Website kein Favicon hat?",
+          "answer": "Wenn FaviconExtractor kein Favicon für eine Website findet, lässt es Sie nicht im Stich. Stattdessen wird automatisch ein benutzerdefiniertes SVG-Icon mit dem ersten Buchstaben des Domainnamens erstellt. So erhalten Sie immer ein verwendbares Icon, selbst wenn eine Website kein eigenes Favicon eingerichtet hat. So funktioniert es:\n\n1. FaviconExtractor sucht nach dem Favicon der Website.\n2. Wenn kein Favicon gefunden wird, erstellt es ein einfaches, attraktives SVG-Icon.\n3. Das SVG-Icon enthält den ersten Buchstaben des Domainnamens.\n4. Dieses generierte Icon kann dann heruntergeladen und wie ein reguläres Favicon verwendet werden.\n\nDiese Funktion ist besonders nützlich für:\n- Platzhalter-Icons während der Entwicklung einer Website\n- Die Aufrechterhaltung eines konsistenten Aussehens in Ihren Lesezeichen oder Anwendungen, auch für Websites ohne Favicons\n- Schnelles Erstellen einfacher, buchstabenbasierter Icons für verschiedene Zwecke\n\nDenken Sie daran, dass dieses generierte Icon kostenlos verwendet werden kann, aber es ist immer am besten, ein benutzerdefiniertes Favicon für Ihre eigenen Websites zu erstellen, um die Markenwiedererkennung und Benutzererfahrung zu verbessern.\n"
+        },
+        "qa2": {
+          "question": "Ist FaviconExtractor kostenlos zu nutzen?\n",
+          "answer": "Ja, FaviconExtractor ist völlig kostenlos zu nutzen. Es gibt keine versteckten Kosten oder Abonnementgebühren.\n"
+        },
+        "qa3": {
+          "question": "Welche Favicon-Größen kann ich herunterladen?\n",
+          "answer": "FaviconExtractor prüft dynamisch alle verfügbaren Favicon-Größen auf einer bestimmten Website. Die Größen können von 16x16 Pixel bis zu 512x512 Pixel oder sogar noch größer reichen, je nachdem, was die Website anbietet.\n"
+        },
+        "qa4": {
+          "question": "Kann ich die Favicons, die ich herunterlade, für meine eigene Website verwenden?\n",
+          "answer": "Während FaviconExtractor es einfach macht, Favicons herunterzuladen, ist es wichtig, die Urheberrechtsgesetze zu respektieren. Die heruntergeladenen Favicons gehören in der Regel den jeweiligen Websites. Wenn Sie ein heruntergeladenes Favicon für etwas anderes als persönliche Zwecke verwenden möchten, stellen Sie sicher, dass Sie die Erlaubnis des ursprünglichen Website-Besitzers haben.\n"
+        },
+        "qa5": {
+          "question": "Kann dieses Tool mir helfen, fehlerhafte Weiterleitungen zu finden?",
+          "answer": "Ja, das Tool wird alle defekten Links in der Weiterleitungskette identifizieren und Ihnen den HTTP-Statuscode (wie 404 für \"Nicht gefunden\") anzeigen, bei dem die Kette unterbrochen wird."
+        },
+        "title": "Häufig gestellte Fragen"
+      },
+      "duration": "Dauer",
+      "download": "Herunterladen",
+      "rendered": "Gerendert",
+      "default_size": "Standardgröße",
+      "larger_size": "Größere Größe"
+    }
+  },
+  "shared": {
+    "desktop": "Desktop",
+    "mobile": "Mobile"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "frontend": {
+    "go_to_homepage": "Go to homepage",
+    "page_not_found": "Page not found",
+    "meta": {
+      "default": {
+        "title": "Pobierz Favicon ze Strony Internetowej | Natychmiastowy Ekstraktor",
+        "description": "Łatwo pobieraj favicony z dowolnej strony internetowej. Wyodrębniaj favicony w różnych rozmiarach. Szybkie, darmowe narzędzie dla programistów, projektantów i webmasterów."
+      }
+    },
+    "home": {
+      "h1": "Natychmiast pobieraj i wyodrębniaj favicony z dowolnej witryny internetowej",
+      "sub_to_h1": "Pobierz Favicon ze strony internetowej",
+      "results_for": "Favicony dla",
+      "no_redirects_found": "Nie znaleziono przekierowań.",
+      "redirect_chain": "Łańcuch przekierowań",
+      "status": "Status",
+      "final_destination": "Ostateczne miejsce docelowe",
+      "check": "Sprawdzać",
+      "faq": {
+        "qa1": {
+          "answer": "Jeśli FaviconExtractor nie może znaleźć favicony dla witryny, nie zostawia Cię z pustymi rękami. Zamiast tego automatycznie generuje niestandardową ikonę SVG, używając pierwszej litery nazwy domeny. Dzięki temu zawsze otrzymujesz użyteczną ikonę, nawet gdy witryna nie ustawiła własnej favicony. Oto jak to działa:\n\n1. FaviconExtractor wyszukuje faviconę witryny.\n2. Jeśli nie zostanie znaleziona żadna favicona, tworzy prostą, atrakcyjną ikonę SVG.\n3. Ikona SVG zawiera pierwszą literę nazwy domeny.\n4. Wygenerowana ikona jest następnie dostępna do pobrania i używania, tak jak zwykła favicona.\n\nTa funkcja jest szczególnie przydatna do:\n- Zastępcze ikony podczas tworzenia witryny\n- Utrzymanie spójnego wyglądu w zakładkach lub aplikacjach, nawet dla witryn bez favikon\n- Szybkie tworzenie prostych ikon opartych na literach do różnych celów\n\nPamiętaj, że chociaż ta wygenerowana ikona jest bezpłatna do użycia, zawsze najlepiej jest stworzyć niestandardową faviconę dla własnych witryn, aby zwiększyć rozpoznawalność marki i doświadczenie użytkownika.\n",
+          "question": "Co jeśli strona internetowa nie ma favicona?"
+        },
+        "qa2": {
+          "question": "Czy FaviconExtractor jest darmowy w użyciu?\n\n\n",
+          "answer": "Tak, FaviconExtractor jest całkowicie darmowy. Nie ma żadnych ukrytych opłat ani abonamentów.\n"
+        },
+        "qa3": {
+          "question": "Jakie rozmiary favikony mogę pobrać?\n",
+          "answer": "FaviconExtractor dynamicznie sprawdza wszystkie dostępne rozmiary favicon na danej stronie internetowej. Rozmiary mogą wynosić od 16x16 pikseli do 512x512 pikseli lub nawet większe, w zależności od tego, co oferuje strona.\n"
+        },
+        "qa4": {
+          "question": "Czy mogę używać faviconów, które pobieram, na własnej stronie internetowej?\n",
+          "answer": "Chociaż FaviconExtractor ułatwia pobieranie faviconów, ważne jest przestrzeganie przepisów dotyczących praw autorskich. Pobierane favicony są zazwyczaj własnością odpowiednich witryn internetowych. Jeśli zamierzasz używać pobranego faviconu do czegoś więcej niż tylko do użytku osobistego, upewnij się, że masz pozwolenie od właściciela oryginalnej witryny.\n"
+        },
+        "qa5": {
+          "question": "Czy to narzędzie może pomóc mi znaleźć uszkodzone przekierowania?",
+          "answer": "Tak, narzędzie zidentyfikuje wszelkie uszkodzone linki w łańcuchu przekierowań i pokaże Ci kod statusu HTTP (np. 404 dla \"Nie znaleziono\"), gdzie łańcuch się przerywa.\n"
+        },
+        "title": "Często zadawane pytania"
+      },
+      "duration": "Czas trwania",
+      "download": "Pobierać",
+      "rendered": "Renderowane",
+      "default_size": "Rozmiar domyślny",
+      "larger_size": "Większy rozmiar"
+    }
+  },
+  "shared": {
+    "mobile": "Przenośny",
+    "desktop": "Pulpit"
+  }
+}
