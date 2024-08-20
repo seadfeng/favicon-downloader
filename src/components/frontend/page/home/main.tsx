@@ -43,7 +43,7 @@ export function Main({
   const [error, setError] = useState<any>(false); 
   const [info, setInfo] = useState<ResponseInfo | null>(null); 
   const defaultValues: FormValues = { 
-    domain: "proxysites.ai"  
+    domain: "faviconextractor.com"  
   }
   const [values, setValues] = useState<FormValues>(defaultValues); 
 
