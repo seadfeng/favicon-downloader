@@ -34,8 +34,8 @@ export function Header() {
     <div className="flex items-center justify-end gap-2 md:ml-auto text-primary">
       <LocaleSwitch />
       <ModeToggle /> 
-      <a href="https://github.com/seadfeng/redirectcheck" className="flex flex-shrink-0">
-        <img title="Redirectcheck Github" alt="Redirectcheck Github" height={20} className="h-[20px]" src="https://img.shields.io/github/stars/seadfeng/redirectcheck?style=social" />
+      <a href="https://github.com/seadfeng/favicon-downloader" className="flex flex-shrink-0">
+        <img title="Favicon Downloader Github" alt="Favicon Downloader Github" height={20} className="h-[20px]" src="https://img.shields.io/github/stars/seadfeng/favicon-downloader?style=social" />
       </a>
     </div>
   </header>
