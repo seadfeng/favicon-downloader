@@ -186,8 +186,3 @@ We welcome contributions to the Redirect Checker project. Please feel free to su
 
 Redirect Checker is maintained by [seadfeng](https://github.com/seadfeng). For more information, visit the [project homepage](https://www.faviconextractor.com/).
 
-## Tags
-
-- redirect-urls
-- redirect-page
-- redirect-checker
