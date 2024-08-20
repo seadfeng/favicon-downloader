@@ -15,6 +15,18 @@ const nextConfig = {
   eslint: {
     dirs: ["src"],
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+      {
+        protocol: 'http',
+        hostname: '**',
+      },
+    ],
+  },
 };
 
 export default withNextIntl(nextConfig);
