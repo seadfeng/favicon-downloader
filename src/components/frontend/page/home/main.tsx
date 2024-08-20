@@ -145,7 +145,7 @@ export function Main({
         </pre>
         <div className="text-xl">{t('frontend.home.rendered')}:</div> 
         <div className="max-w-[300px] my-5">
-          <Image alt={alt} width={100} height={100} className="bg-secondary rounded-md" src={src} loading="lazy" />
+          <Image layout="intrinsic" alt={alt} width={100} height={100} className="bg-secondary rounded-md" src={src} loading="lazy" />
         </div>
       </div>
     );
