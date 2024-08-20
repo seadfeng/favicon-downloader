@@ -10,7 +10,9 @@ export const appConfig = {
   appName: "FaviconExtractor",
   appDescription: "FaviconExtractor",
   gaId: process.env.NEXT_PUBLIC_GA_ID,
-  origin: process.env.NODE_ENV === "development" ? "http://127.0.0.1:3000" : "https://www.faviconextractor.com",
+  // change to your pages.dev domain: eg., https://favicon-3j1.pages.dev/
+  // this is for i18n markdown: public/content/components
+  origin: process.env.NODE_ENV === "development" ? "http://127.0.0.1:3000" : "https://favicon-3j1.pages.dev",
   i18n: {
     locales,
     defaultLocale,
