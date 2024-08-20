@@ -101,8 +101,7 @@ export function Main({
  
   useEffect(() => {
     if (typeof window !== "undefined") {
-      // const currentHost = window.location.host;
-      const currentHost =  'favicon-3j1.pages.dev';
+      const currentHost = window.location.host;
       setHost(currentHost);
 
       setImageDefaultUrl(`${process.env.NODE_ENV === 'development' ? "http" : "https"}://${currentHost}/favicon/${domain}`);
