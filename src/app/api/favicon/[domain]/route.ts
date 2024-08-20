@@ -21,17 +21,12 @@ const BodySchema = z.object({
  * @param {NextRequest} request - The incoming request object.
  * @returns {Promise<Response>} - A promise that resolves to a response containing the fetch results as JSON.
  */
-export async function POST(request: NextRequest) {
+export async function GET(request: NextRequest, { params }: { params: { domain: string } }) {
   const startTime = Date.now(); // Record the start time for calculating the request duration
 
   // Parse and validate the request body
-  let domain: string;
-  let headers: Headers | undefined;
+  const { domain } = params;
   try {
-    const jsonData = await request.json();
-    const parsedData = BodySchema.parse(jsonData);
-    domain = parsedData.domain;
-    headers = parsedData.headers ? new Headers(parsedData.headers) : undefined;
   } catch (error: any) {
     return new Response(JSON.stringify({ error: { message: error.message } }, null, 2), {
       status: 400,
@@ -39,9 +34,6 @@ export async function POST(request: NextRequest) {
     });
   }
 
-  // Initialize headers and remove 'Content-Length' to avoid issues
-  headers = new Headers(headers || request.headers);
-  headers.delete('Content-Length');
 
   // Define a helper function to handle the response and set status
   const handleResponse = (data: ResponseInfo, status: number, statusText: string) => {
@@ -58,7 +50,7 @@ export async function POST(request: NextRequest) {
   let url = `http://${domain}`;
 
   try {
-    data = await getFavicons({ url, headers });
+    data = await getFavicons({ url });
     if (data.status === 530) return handleResponse(data, 530, 'Error 530');
     if (data.icons.length > 0) return handleResponse(data, 200, 'ok');
   } catch (error) {
@@ -68,7 +60,7 @@ export async function POST(request: NextRequest) {
   // Retry using HTTPS if HTTP fails
   url = `https://${domain}`;
   try {
-    data = await getFavicons({ url, headers });
+    data = await getFavicons({ url });
     if (data.status === 530) return handleResponse(data, 530, 'Error 530');
     if (data.icons.length > 0) return handleResponse(data, 200, 'ok');
   } catch (error) {

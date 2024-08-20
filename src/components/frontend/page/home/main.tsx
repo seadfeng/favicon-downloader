@@ -84,7 +84,7 @@ export function Main({
     setError(false); 
     setInfo(null); 
     setValues(values);
-    apiClient.post("/favicons", values)
+    apiClient.get(`/favicon/${values.domain}`)
     .then((res) => { 
       setInfo(res as any);
       setFetching(false);
