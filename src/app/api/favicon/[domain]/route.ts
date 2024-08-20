@@ -100,7 +100,7 @@ export async function GET(request: NextRequest, { params }: { params: { domain: 
 
   // Return a response with no icons if all attempts fail
   const duration = ((Date.now() - startTime) / 1000).toFixed(3);
-  return new Response(JSON.stringify({ url, host: new URL(url).host, status: 500, statusText: 'Fail', icons, duration }, null, 2), {
+  return new Response(JSON.stringify({ url, host: new URL(url).host, status: 500, statusText: 'Fail', icons, duration: `${duration} s` }, null, 2), {
     status: 500,
     statusText: 'Fail',
     headers: { 'Content-Type': 'application/json' }
