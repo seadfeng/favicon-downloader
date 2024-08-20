@@ -1,52 +1,19 @@
 {
   "frontend": {
-    "go_to_homepage": "Go to homepage",
-    "page_not_found": "Page not found",
-    "meta": {
-      "default": {
-        "title": "Web Sitesinden Favicon İndir | Anında Çıkarıcı",
-        "description": "Herhangi bir web sitesinden kolayca favicon indirin. Farklı boyutlarda favicons çıkarın. Geliştiriciler, tasarımcılar ve web yöneticileri için hızlı ve ücretsiz araç."
-      }
-    },
     "home": {
-      "h1": "Herhangi bir web sitesinden favicon'ları anında indirin ve çıkarın",
-      "sub_to_h1": "Favicon'u Web Sitesinden İndirin",
-      "results_for": "Favicon'lar",
-      "status": "Durum",
-      "final_destination": "Nihai hedef",
-      "check": "Kontrol etmek",
       "faq": {
-        "qa1": {
-          "answer": "FaviconExtractor bir web sitesi için favicon bulamazsa, sizi eli boş bırakmaz. Bunun yerine, alan adının ilk harfini kullanarak otomatik olarak özel bir SVG simgesi oluşturur. Bu, bir web sitesi kendi favicon'unu ayarlamamış olsa bile her zaman kullanılabilir bir simge elde etmenizi sağlar. İşte nasıl çalışır:\n\n1. FaviconExtractor, web sitesinin favicon'unu arar.\n2. Favicon bulunamazsa, basit ve çekici bir SVG simgesi oluşturur.\n3. SVG simgesi, alan adının ilk harfini içerir.\n4. Bu oluşturulan simge, normal bir favicon gibi indirilebilir ve kullanılabilir.\n\nBu özellik özellikle şunlar için yararlıdır:\n- Bir web sitesi geliştirirken geçici simgeler olarak\n- Sık kullanılanlar veya uygulamalarınızda tutarlı bir görünüm sürdürmek için, favicon'u olmayan siteler için bile\n- Çeşitli amaçlar için basit harf tabanlı simgeleri hızla oluşturmak için\n\nUnutmayın, bu oluşturulan simge ücretsiz olarak kullanılabilir, ancak kendi web siteleriniz için marka tanınırlığını ve kullanıcı deneyimini artırmak amacıyla özel bir favicon oluşturmak her zaman en iyisidir.\n",
-          "question": "Bir web sitesinde favicon yoksa ne olur?"
+        "qa4": {
+          "answer": "FaviconExtractor site simgelerini indirmeyi kolaylaştırsa da telif hakkı yasalarına uymak önemlidir. \nİndirdiğiniz favicon'lar genellikle ilgili web sitelerine aittir. \nİndirdiğiniz bir favicon'u kişisel referans dışında herhangi bir amaçla kullanıyorsanız, orijinal web sitesinin sahibinden izin aldığınızdan emin olun.",
+          "question": "İndirdiğim faviconları kendi web sitem için kullanabilir miyim?"
         },
         "qa2": {
-          "question": "Araç uluslararası URL'leri destekliyor mu?",
-          "answer": "Evet, FaviconExtractor tamamen ücretsizdir. Gizli ücretler veya abonelik ücretleri yoktur.\n"
+          "answer": "Evet, FaviconExtractor'ın kullanımı tamamen ücretsizdir. \nHiçbir gizli ücret veya abonelik ücreti yoktur.",
+          "question": "FaviconExtractor'ın kullanımı ücretsiz mi?"
         },
-        "qa3": {
-          "question": "Hangi favicon boyutlarını indirebilirim?\n",
-          "answer": "FaviconExtractor, belirli bir web sitesinde mevcut olan tüm favicon boyutlarını dinamik olarak kontrol eder. Boyutlar, 16x16 pikselden 512x512 piksele veya hatta daha büyük boyutlara kadar değişebilir, siteye bağlı olarak.\n"
-        },
-        "qa4": {
-          "question": "İndirdiğim faviconları kendi web sitemde kullanabilir miyim?\n",
-          "answer": "FaviconExtractor, favikonları indirmenizi kolaylaştırsa da, telif haklarına saygı göstermek önemlidir. İndirdiğiniz favikonlar genellikle ilgili web sitelerine aittir. İndirdiğiniz favikonu kişisel referans dışında bir şey için kullanmayı düşünüyorsanız, lütfen orijinal web sitesi sahibinden izin aldığınızdan emin olun.\n"
-        },
-        "qa5": {
-          "question": "Bu araç bozuk yönlendirmeleri bulmama yardımcı olabilir mi?",
-          "answer": "Evet, araç yönlendirme zincirindeki bozuk bağlantıları tespit edecek ve zincirin koptuğu yerde HTTP durum kodunu (404 gibi \"Bulunamadı\") gösterecektir."
-        },
-        "title": "Sıkça Sorulan Sorular"
-      },
-      "duration": "Süre",
-      "download": "İndirmek",
-      "rendered": "Oluşturuldu",
-      "default_size": "Varsayılan Boyut",
-      "larger_size": "Büyük Boyut"
+        "qa1": {
+          "answer": "FaviconExtractor bir web sitesi için favicon bulamazsa, bu sizi eli boş bırakmaz. \nBunun yerine, alan adının ilk harfini kullanarak otomatik olarak özel bir SVG simgesi oluşturur. \nBu, bir web sitesi kendi favicon'unu ayarlamamış olsa bile her zaman kullanılabilir bir simgeye sahip olmanızı sağlar. \nİşte olanlar:\n\n\n1. FaviconExtractor web sitesinin favicon'unu arar.\n\n2. Herhangi bir site simgesi bulunamazsa basit, çekici bir SVG simgesi oluşturulur.\n\n3. SVG simgesi alan adının ilk harfini içerir.\n\n4. Oluşturulan bu simge daha sonra normal bir favicon gibi indirilebilir ve kullanılabilir.\n\n\nBu özellik özellikle aşağıdakiler için kullanışlıdır:\n\n- Bir web sitesi geliştirirken yer tutucu simgeler\n\n- Sık kullanılan simgesi olmayan siteler için bile yer imlerinizde veya uygulamalarınızda tutarlı bir görünüm sağlama\n\n- Çeşitli amaçlar için hızlı bir şekilde basit harf tabanlı simgeler oluşturma\n\n\nOluşturulan bu simgenin kullanımı ücretsiz olsa da, marka bilinirliğini ve kullanıcı deneyimini geliştirmek amacıyla kendi web siteleriniz için özel bir favicon oluşturmanın her zaman en iyisi olduğunu unutmayın."
+        }
+      }
     }
-  },
-  "shared": {
-    "desktop": "Masaüstü",
-    "mobile": "Mobil"
   }
 }

@@ -1,52 +1,23 @@
 {
   "frontend": {
-    "go_to_homepage": "Go to homepage",
-    "page_not_found": "Page not found",
-    "meta": {
-      "default": {
-        "title": "Favicon downloaden van Website | Directe Extractor",
-        "description": "Download eenvoudig favicons van elke website. Haal favicons op in meerdere formaten. Snel en gratis hulpmiddel voor ontwikkelaars, ontwerpers en webmasters."
-      }
-    },
     "home": {
-      "h1": "Download en extraheer favicons direct van elke website",
-      "sub_to_h1": "Favicon downloaden van de website",
-      "results_for": "Resultaten voor",
-      "status": "Status",
-      "final_destination": "Eindbestemming",
-      "check": "Rekening",
       "faq": {
-        "qa1": {
-          "answer": "Als FaviconExtractor geen favicon voor een website kan vinden, laat het u niet met lege handen staan. In plaats daarvan genereert het automatisch een aangepast SVG-pictogram met de eerste letter van de domeinnaam. Dit zorgt ervoor dat u altijd een bruikbaar pictogram krijgt, zelfs wanneer een website geen eigen favicon heeft ingesteld. Dit is hoe het werkt:\n\n1. FaviconExtractor zoekt naar de favicon van de website.\n2. Als er geen favicon wordt gevonden, maakt het een eenvoudig, aantrekkelijk SVG-pictogram.\n3. Het SVG-pictogram toont de eerste letter van de domeinnaam.\n4. Dit gegenereerde pictogram is vervolgens beschikbaar voor download en gebruik, net als een normaal favicon.\n\nDeze functie is vooral handig voor:\n- Plaatshouderpictogrammen tijdens het ontwikkelen van een website\n- Het handhaven van een consistente uitstraling in uw bladwijzers of applicaties, zelfs voor sites zonder favicons\n- Snel eenvoudige lettergebaseerde pictogrammen maken voor verschillende doeleinden\n\nOnthoud dat hoewel dit gegenereerde pictogram gratis te gebruiken is, het altijd beter is om een aangepast favicon te maken voor uw eigen websites om merkherkenning en gebruikerservaring te verbeteren.\n",
-          "question": "Wat als een website geen favicon heeft?"
-        },
-        "qa2": {
-          "question": "Is FaviconExtractor gratis te gebruiken?\n\n",
-          "answer": "Ja, FaviconExtractor is volledig gratis te gebruiken. Er zijn geen verborgen kosten of abonnementskosten.\n"
-        },
-        "qa3": {
-          "question": "Welke favicon-maten kan ik downloaden?\n",
-          "answer": "FaviconExtractor controleert dynamisch alle beschikbare favicon-groottes op een gegeven website. De groottes kunnen variëren van 16x16 pixels tot 512x512 pixels of zelfs groter, afhankelijk van wat de website aanbiedt.\n"
+        "qa5": {
+          "question": "Kan ik meerdere websites tegelijk bekijken?",
+          "answer": "Momenteel controleert FaviconExtractor één website tegelijk. \nVoor bulkcontroles moet u elk domein afzonderlijk invoeren."
         },
         "qa4": {
-          "question": "Kan ik de favicons die ik download voor mijn eigen website gebruiken?\n",
-          "answer": "Hoewel FaviconExtractor het gemakkelijk maakt om favicons te downloaden, is het belangrijk om de auteursrechten te respecteren. De favicons die je downloadt, zijn meestal eigendom van de betreffende websites. Als je een gedownload favicon voor iets anders dan persoonlijke referentie gebruikt, zorg dan dat je toestemming hebt van de eigenaar van de oorspronkelijke website.\n"
+          "answer": "Hoewel FaviconExtractor het gemakkelijk maakt om favicons te downloaden, is het belangrijk om de auteursrechtwetten te respecteren. \nDe favicons die u downloadt, zijn doorgaans eigendom van hun respectievelijke websites. \nAls je een gedownloade favicon voor iets anders dan persoonlijke referentie gebruikt, zorg er dan voor dat je toestemming hebt van de oorspronkelijke website-eigenaar.",
+          "question": "Kan ik de favicons die ik download gebruiken voor mijn eigen website?"
         },
-        "qa5": {
-          "question": "Kan deze tool mij helpen kapotte redirects te vinden?",
-          "answer": "Ja, de tool zal alle kapotte links in de redirectketen identificeren en u de HTTP-statuscode tonen (zoals 404 voor \"Niet gevonden\") waar de keten breekt."
+        "qa2": {
+          "answer": "Ja, FaviconExtractor is volledig gratis te gebruiken. \nEr zijn geen verborgen kosten of abonnementskosten.",
+          "question": "Is FaviconExtractor gratis te gebruiken?"
         },
-        "title": "Veelgestelde vragen"
-      },
-      "duration": "Duur",
-      "download": "Downloaden",
-      "rendered": "Teruggegeven",
-      "default_size": "Standaardgrootte",
-      "larger_size": "Groter formaat"
+        "qa1": {
+          "answer": "Als FaviconExtractor geen favicon voor een website kan vinden, staat u niet alleen met lege handen. \nIn plaats daarvan genereert het automatisch een aangepast SVG-pictogram met de eerste letter van de domeinnaam. \nDit zorgt ervoor dat u altijd een bruikbaar pictogram krijgt, zelfs als een website geen eigen favicon heeft ingesteld. \nDit is wat er gebeurt:\n\n\n1. FaviconExtractor zoekt naar de favicon van de website.\n\n2. Als er geen favicon wordt gevonden, wordt er een eenvoudig, aantrekkelijk SVG-pictogram gemaakt.\n\n3. Het SVG-pictogram bevat de eerste letter van de domeinnaam.\n\n4. Dit gegenereerde pictogram kan vervolgens worden gedownload en gebruikt, net als een gewone favicon.\n\n\nDeze functie is met name handig voor:\n\n- Tijdelijke aanduidingspictogrammen terwijl u een website ontwikkelt\n\n- Een consistent uiterlijk behouden in uw bladwijzers of applicaties, zelfs voor sites zonder favicons\n\n- Snel eenvoudige, op letters gebaseerde pictogrammen maken voor verschillende doeleinden\n\n\nHoud er rekening mee dat, hoewel dit gegenereerde pictogram gratis te gebruiken is, het altijd het beste is om een ​​aangepast favicon voor uw eigen websites te maken om de merkherkenning en gebruikerservaring te verbeteren."
+        }
+      }
     }
-  },
-  "shared": {
-    "desktop": "Bureaublad",
-    "mobile": "Mobiel"
   }
 }

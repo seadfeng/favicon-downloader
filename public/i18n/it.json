@@ -1,52 +1,23 @@
 {
   "frontend": {
-    "go_to_homepage": "Go to homepage",
-    "page_not_found": "Page not found",
-    "meta": {
-      "default": {
-        "title": "Scarica Favicon dal Sito Web | Estrattore Istantaneo",
-        "description": "Scarica facilmente favicon da qualsiasi sito web. Estrai favicons in più dimensioni. Strumento veloce e gratuito per sviluppatori, designer e webmaster."
-      }
-    },
     "home": {
-      "h1": "Scarica ed estrai istantaneamente le favicon da qualsiasi sito web",
-      "sub_to_h1": "Scarica Favicon dal sito web",
-      "results_for": "Favicon per",
-      "status": "Stato",
-      "final_destination": "Destinazione finale",
-      "check": "Controllo",
       "faq": {
-        "qa1": {
-          "question": "Cosa succede se un sito web non ha un favicon?",
-          "answer": "Se FaviconExtractor non riesce a trovare un favicon per un sito web, non ti lascia a mani vuote. Invece, genera automaticamente un'icona SVG personalizzata utilizzando la prima lettera del nome di dominio. Questo assicura che tu ottenga sempre un'icona utilizzabile, anche quando un sito web non ha impostato il proprio favicon. Ecco come funziona:\n\n1. FaviconExtractor cerca il favicon del sito web.\n2. Se non viene trovato alcun favicon, crea un'icona SVG semplice e attraente.\n3. L'icona SVG presenta la prima lettera del nome di dominio.\n4. Questa icona generata è quindi disponibile per il download e l'uso, proprio come un normale favicon.\n\nQuesta funzione è particolarmente utile per:\n- Icone segnaposto mentre sviluppi un sito web\n- Mantenere un aspetto coerente nei tuoi segnalibri o applicazioni, anche per i siti senza favicons\n- Creare rapidamente semplici icone basate su lettere per vari scopi\n\nRicorda che, mentre questa icona generata è gratuita, è sempre meglio creare un favicon personalizzato per i tuoi siti web per migliorare il riconoscimento del marchio e l'esperienza utente.\n"
-        },
-        "qa2": {
-          "question": "FaviconExtractor è gratuito da usare?\n",
-          "answer": "Sì, FaviconExtractor è completamente gratuito. Non ci sono costi nascosti o tariffe di abbonamento.\n"
-        },
-        "qa3": {
-          "question": "Quali dimensioni di favicon posso scaricare?\n",
-          "answer": "FaviconExtractor controlla dinamicamente tutte le dimensioni di favicon disponibili su un sito web specifico. Le dimensioni possono variare da 16x16 pixel fino a 512x512 pixel o anche più grandi, a seconda di ciò che offre il sito web.\n"
+        "qa5": {
+          "question": "Posso controllare più siti web contemporaneamente?",
+          "answer": "Attualmente, FaviconExtractor controlla un sito Web alla volta. \nPer i controlli collettivi, dovrai inserire ciascun dominio separatamente."
         },
         "qa4": {
-          "question": "Posso utilizzare i favicon che scarico per il mio sito web?\n",
-          "answer": "Sebbene FaviconExtractor renda facile il download dei favicon, è importante rispettare le leggi sul copyright. I favicon che scarichi sono solitamente di proprietà dei rispettivi siti web. Se stai usando un favicon scaricato per qualcosa di diverso dal riferimento personale, assicurati di avere il permesso del proprietario del sito web originale.\n"
+          "answer": "Sebbene FaviconExtractor semplifichi il download delle favicon, è importante rispettare le leggi sul copyright. \nLe favicon scaricate sono in genere di proprietà dei rispettivi siti Web. \nSe utilizzi una favicon scaricata per scopi diversi dal riferimento personale, assicurati di avere l'autorizzazione del proprietario del sito web originale.",
+          "question": "Posso utilizzare le favicon che scarico per il mio sito web?"
         },
-        "qa5": {
-          "question": "Questo strumento può aiutarmi a trovare reindirizzamenti non funzionanti?",
-          "answer": "Sì, lo strumento identificherà eventuali collegamenti interrotti nella catena di reindirizzamento e ti mostrerà il codice di stato HTTP (come 404 per \"Non trovato\") dove la catena si interrompe."
+        "qa2": {
+          "answer": "Sì, FaviconExtractor è completamente gratuito. \nNon ci sono costi nascosti o costi di abbonamento.",
+          "question": "FaviconExtractor è gratuito?"
         },
-        "title": "Domande frequenti"
-      },
-      "duration": "Durata",
-      "download": "Scaricamento",
-      "rendered": "Reso",
-      "default_size": "Dimensione predefinita",
-      "larger_size": "Dimensioni maggiori"
+        "qa1": {
+          "answer": "Se FaviconExtractor non riesce a trovare una favicon per un sito web, non ti lascia semplicemente a mani vuote. \nInvece, genera automaticamente un'icona SVG personalizzata utilizzando la prima lettera del nome di dominio. \nCiò garantisce di ottenere sempre un'icona utilizzabile, anche quando un sito Web non ha impostato la propria favicon. \nEcco cosa succede:\n\n\n1. FaviconExtractor cerca la favicon del sito web.\n\n2. Se non viene trovata alcuna favicon, crea un'icona SVG semplice e attraente.\n\n3. L'icona SVG presenta la prima lettera del nome di dominio.\n\n4. L'icona generata sarà quindi disponibile per il download e l'utilizzo, proprio come una normale favicon.\n\n\nQuesta funzionalità è particolarmente utile per:\n\n- Icone segnaposto durante lo sviluppo di un sito web\n\n- Mantenere un aspetto coerente nei tuoi segnalibri o applicazioni, anche per i siti senza favicon\n\n- Creazione rapida di semplici icone basate su lettere per vari scopi\n\n\nRicorda, sebbene l'uso di questa icona generata sia gratuito, è sempre meglio creare una favicon personalizzata per i tuoi siti Web per migliorare il riconoscimento del marchio e l'esperienza dell'utente."
+        }
+      }
     }
-  },
-  "shared": {
-    "desktop": "Desktop",
-    "mobile": "Mobile"
   }
 }

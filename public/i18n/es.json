@@ -18,23 +18,23 @@
       "faq": {
         "qa1": {
           "question": "¿Qué pasa si un sitio web no tiene favicon?",
-          "answer": "Si FaviconExtractor no puede encontrar un favicon para un sitio web, no lo deja con las manos vacías. En su lugar, genera automáticamente un ícono SVG personalizado usando la primera letra del nombre de dominio. Esto asegura que siempre obtenga un ícono utilizable, incluso cuando un sitio web no ha configurado su propio favicon. Así es como funciona:\n\n1. FaviconExtractor busca el favicon del sitio web.\n2. Si no se encuentra un favicon, crea un ícono SVG simple y atractivo.\n3. El ícono SVG presenta la primera letra del nombre de dominio.\n4. Este ícono generado está disponible para descargar y usar, al igual que un favicon normal.\n\nEsta función es particularmente útil para:\n- Íconos de marcador de posición mientras desarrollas un sitio web\n- Mantener una apariencia coherente en tus marcadores o aplicaciones, incluso para sitios sin favicons\n- Crear rápidamente íconos simples basados en letras para diversos propósitos\n\nRecuerda que, aunque este ícono generado es de uso gratuito, siempre es mejor crear un favicon personalizado para tus propios sitios web para mejorar el reconocimiento de marca y la experiencia del usuario.\n"
+          "answer": "Si FaviconExtractor no puede encontrar un favicon para un sitio web, no lo dejará con las manos vacías. \nEn cambio, genera automáticamente un ícono SVG personalizado usando la primera letra del nombre de dominio. \nEsto garantiza que siempre obtendrá un ícono utilizable, incluso cuando un sitio web no haya configurado su propio favicon. \nEsto es lo que sucede:\n\n\n1. FaviconExtractor busca el favicon del sitio web.\n\n2. Si no se encuentra ningún favicon, crea un icono SVG simple y atractivo.\n\n3. El ícono SVG presenta la primera letra del nombre de dominio.\n\n4. Este ícono generado estará disponible para descargar y usar, como un favicon normal.\n\n\nEsta característica es particularmente útil para:\n\n- Iconos de marcador de posición mientras desarrollas un sitio web\n\n- Mantener una apariencia consistente en tus favoritos o aplicaciones, incluso para sitios sin favicons\n\n- Creación rápida de íconos simples basados ​​en letras para diversos propósitos\n\n\nRecuerde, si bien este ícono generado es de uso gratuito, siempre es mejor crear un favicon personalizado para sus propios sitios web para mejorar el reconocimiento de la marca y la experiencia del usuario."
         },
         "qa2": {
-          "question": "¿Es FaviconExtractor gratuito para usar?\n",
-          "answer": "Sí, FaviconExtractor es completamente gratuito. No hay cargos ocultos ni tarifas de suscripción.\n"
+          "question": "¿FaviconExtractor es de uso gratuito?",
+          "answer": "Sí, FaviconExtractor es de uso completamente gratuito. \nNo hay cargos ocultos ni tarifas de suscripción."
         },
         "qa3": {
           "question": "¿Qué tamaños de favicon puedo descargar?\n",
           "answer": "FaviconExtractor verifica dinámicamente todos los tamaños de favicon disponibles en un sitio web dado. Los tamaños pueden variar desde 16x16 píxeles hasta 512x512 píxeles o incluso más grandes, dependiendo de lo que ofrezca el sitio web.\n"
         },
         "qa4": {
-          "question": "¿Puedo usar los favicons que descargo para mi propio sitio web?\n",
-          "answer": "Aunque FaviconExtractor facilita la descarga de favicons, es importante respetar las leyes de derechos de autor. Los favicons que descargas suelen ser propiedad de sus respectivos sitios web. Si vas a usar un favicon descargado para algo más que para referencia personal, asegúrate de tener permiso del propietario del sitio web original.\n"
+          "question": "¿Puedo usar los favicons que descargo para mi propio sitio web?",
+          "answer": "Si bien FaviconExtractor facilita la descarga de favicons, es importante respetar las leyes de derechos de autor. \nLos favicons que descargas suelen ser propiedad de sus respectivos sitios web. \nSi está utilizando un favicon descargado para algo que no sea una referencia personal, asegúrese de tener el permiso del propietario original del sitio web."
         },
         "qa5": {
-          "question": "¿Puede esta herramienta ayudarme a encontrar redirecciones rotas?",
-          "answer": "Sí, la herramienta identificará cualquier enlace roto en la cadena de redirección y le mostrará el código de estado HTTP (como 404 para \"No encontrado\") donde se rompe la cadena."
+          "question": "¿Puedo consultar varios sitios web a la vez?",
+          "answer": "Actualmente, FaviconExtractor comprueba un sitio web a la vez. \nPara verificaciones masivas, deberá ingresar cada dominio por separado."
         },
         "title": "Preguntas frecuentes"
       },
