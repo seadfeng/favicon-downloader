@@ -43,7 +43,7 @@
       "rendered": "Rendered",
       "default_size": "Default Size",
       "default_size_alt": "{domain} favicon",
-      "larger_size_alt": "{domain} favicon larger",
+      "larger_size_alt": "{domain} favicon (larger)",
       "larger_size": "Larger Size"
     }
   },

@@ -21,7 +21,23 @@
         "qa3": {
           "question": "我可以下载什么尺寸的网站图标？",
           "answer": "FaviconExtractor 动态检查给定网站上所有可用的图标大小。\n尺寸范围可以从 16x16 像素到 512x512 像素甚至更大，具体取决于网站提供的内容。"
-        }
+        },
+        "title": "常见问题解答"
+      },
+      "sub_to_h1": "从网站下载网站图标",
+      "h1": "立即从任何网站下载并提取网站图标",
+      "default_size_alt": "{domain} 图标",
+      "larger_size_alt": "{domain} 网站图标（较大）",
+      "larger_size": "较大尺寸",
+      "default_size": "默认尺寸",
+      "check": "查看",
+      "download": "下载",
+      "results_for": "网站图标"
+    },
+    "meta": {
+      "default": {
+        "title": "从网站下载 Favicon |\n即时提取器",
+        "description": "从任何网站轻松下载网站图标。\n提取多种尺寸的网站图标。\n适合开发人员、设计师和网站管理员的快速、免费工具。"
       }
     }
   }

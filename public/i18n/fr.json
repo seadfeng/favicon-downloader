@@ -21,7 +21,23 @@
         "qa5": {
           "question": "Puis-je consulter plusieurs sites Web à la fois ?",
           "answer": "Actuellement, FaviconExtractor vérifie un site Web à la fois. \nPour les vérifications groupées, vous devrez saisir chaque domaine séparément."
-        }
+        },
+        "title": "Foire aux questions"
+      },
+      "sub_to_h1": "Téléchargez Favicon depuis le site Web",
+      "h1": "Téléchargez et extrayez instantanément les favicons de n'importe quel site Web",
+      "default_size_alt": "Icône de favori {domaine}",
+      "larger_size_alt": "Icône de favicon {domain} (plus grande)",
+      "larger_size": "Plus grande taille",
+      "default_size": "Taille par défaut",
+      "check": "Vérifier",
+      "download": "Télécharger",
+      "results_for": "Icônes de favoris pour"
+    },
+    "meta": {
+      "default": {
+        "title": "Téléchargez Favicon depuis le site Web | \nExtracteur instantané",
+        "description": "Téléchargez facilement une favicon depuis n'importe quel site Web. \nExtrayez des favicons en plusieurs tailles. \nOutil rapide et gratuit pour les développeurs, les concepteurs et les webmasters."
       }
     }
   }

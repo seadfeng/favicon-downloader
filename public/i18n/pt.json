@@ -21,7 +21,23 @@
         "qa3": {
           "question": "Quais tamanhos de favicon posso baixar?",
           "answer": "O FaviconExtractor verifica dinamicamente todos os tamanhos de favicon disponíveis em um determinado site. \nOs tamanhos podem variar de 16x16 pixels até 512x512 pixels ou até maiores, dependendo do que o site oferece."
-        }
+        },
+        "title": "Perguntas frequentes"
+      },
+      "sub_to_h1": "Baixe Favicon do site",
+      "h1": "Baixe e extraia instantaneamente favicons de qualquer site",
+      "default_size_alt": "ícone favorito de {domínio}",
+      "larger_size_alt": "Favicon de {domínio} (maior)",
+      "larger_size": "Tamanho maior",
+      "default_size": "Tamanho padrão",
+      "check": "Verificar",
+      "download": "Download",
+      "results_for": "Favoritos para"
+    },
+    "meta": {
+      "default": {
+        "title": "Baixe o Favicon do site | \nExtrator Instantâneo",
+        "description": "Baixe facilmente o favicon de qualquer site. \nExtraia favicons em vários tamanhos. \nFerramenta rápida e gratuita para desenvolvedores, designers e webmasters."
       }
     }
   }

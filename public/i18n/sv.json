@@ -21,7 +21,23 @@
         "qa5": {
           "question": "Kan jag kolla flera webbplatser samtidigt?",
           "answer": "För närvarande kontrollerar FaviconExtractor en webbplats i taget. \nFör masskontroller måste du ange varje domän separat."
-        }
+        },
+        "title": "Vanliga frågor"
+      },
+      "sub_to_h1": "Ladda ner Favicon från webbplatsen",
+      "h1": "Ladda ner och extrahera favoritikoner direkt från vilken webbplats som helst",
+      "default_size_alt": "{domän} favicon",
+      "larger_size_alt": "{domain} favicon (större)",
+      "larger_size": "Större storlek",
+      "default_size": "Standardstorlek",
+      "check": "Kontrollera",
+      "download": "Ladda ner",
+      "results_for": "Favoriter för"
+    },
+    "meta": {
+      "default": {
+        "title": "Ladda ner Favicon från webbplatsen | \nInstant Extractor",
+        "description": "Ladda enkelt ner favicon från vilken webbplats som helst. \nExtrahera faviconer i flera storlekar. \nSnabbt, gratis verktyg för utvecklare, designers och webbansvariga."
       }
     }
   }

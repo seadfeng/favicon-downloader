@@ -21,7 +21,23 @@
         "qa3": {
           "question": "Jakie rozmiary favikon mogę pobrać?",
           "answer": "FaviconExtractor dynamicznie sprawdza wszystkie dostępne rozmiary favikon na danej stronie. \nRozmiary mogą wynosić od 16 x 16 pikseli do 512 x 512 pikseli lub nawet większe, w zależności od oferty witryny."
-        }
+        },
+        "title": "Często zadawane pytania"
+      },
+      "sub_to_h1": "Pobierz Favicon ze strony internetowej",
+      "h1": "Natychmiast pobieraj i wyodrębniaj favicony z dowolnej witryny internetowej",
+      "default_size_alt": "ikona ulubionych {domena}",
+      "larger_size_alt": "ikona favicon {domena} (większa)",
+      "larger_size": "Większy rozmiar",
+      "default_size": "Rozmiar domyślny",
+      "check": "Sprawdzać",
+      "download": "Pobierać",
+      "results_for": "Favicony dla"
+    },
+    "meta": {
+      "default": {
+        "title": "Pobierz Favicon ze strony internetowej | \nNatychmiastowy ekstraktor",
+        "description": "Z łatwością pobierz faviconę z dowolnej strony internetowej. \nWyodrębnij favicony w wielu rozmiarach. \nSzybkie, bezpłatne narzędzie dla programistów, projektantów i webmasterów."
       }
     }
   }

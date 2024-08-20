@@ -42,7 +42,9 @@
       "download": "Скачать",
       "rendered": "Рендеринг",
       "default_size": "Размер по умолчанию",
-      "larger_size": "Больший размер"
+      "larger_size": "Больший размер",
+      "default_size_alt": "{домен} значок",
+      "larger_size_alt": "Значок {domain} (увеличенный)"
     }
   },
   "shared": {

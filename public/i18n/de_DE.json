@@ -42,7 +42,9 @@
       "download": "Herunterladen",
       "rendered": "Gerendert",
       "default_size": "Standardgröße",
-      "larger_size": "Größere Größe"
+      "larger_size": "Größere Größe",
+      "default_size_alt": "{domain}-Favicon",
+      "larger_size_alt": "{domain} Favicon (größer)"
     }
   },
   "shared": {

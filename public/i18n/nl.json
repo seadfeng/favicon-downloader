@@ -21,7 +21,23 @@
         "qa3": {
           "question": "Welke faviconformaten kan ik downloaden?",
           "answer": "FaviconExtractor controleert dynamisch op alle beschikbare faviconformaten op een bepaalde website. \nDe formaten kunnen variëren van 16x16 pixels tot 512x512 pixels of zelfs groter, afhankelijk van wat de website biedt."
-        }
+        },
+        "title": "Veelgestelde vragen"
+      },
+      "sub_to_h1": "Favicon downloaden van de website",
+      "h1": "Download en extraheer favicons direct van elke website",
+      "default_size_alt": "{domein} favicon",
+      "larger_size_alt": "{domein} favicon (groter)",
+      "larger_size": "Groter formaat",
+      "default_size": "Standaardgrootte",
+      "check": "Rekening",
+      "download": "Downloaden",
+      "results_for": "Favicons voor"
+    },
+    "meta": {
+      "default": {
+        "title": "Favicon downloaden van website | \nInstantextractor",
+        "description": "Download favicon eenvoudig vanaf elke website. \nExtraheer favicons in meerdere formaten. \nSnelle, gratis tool voor ontwikkelaars, ontwerpers en webmasters."
       }
     }
   }

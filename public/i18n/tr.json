@@ -21,7 +21,23 @@
         "qa5": {
           "question": "Aynı anda birden fazla web sitesini kontrol edebilir miyim?",
           "answer": "Şu anda FaviconExtractor aynı anda bir web sitesini kontrol ediyor. \nToplu kontroller için her alan adını ayrı ayrı girmeniz gerekir."
-        }
+        },
+        "title": "Sıkça Sorulan Sorular"
+      },
+      "sub_to_h1": "Favicon'u Web Sitesinden İndirin",
+      "h1": "Herhangi bir web sitesinden favicon'ları anında indirin ve çıkarın",
+      "default_size_alt": "{domain} site simgesi",
+      "larger_size_alt": "{domain} site simgesi (daha büyük)",
+      "larger_size": "Büyük Boyut",
+      "default_size": "Varsayılan Boyut",
+      "check": "Kontrol etmek",
+      "download": "İndirmek",
+      "results_for": "Favicon'lar"
+    },
+    "meta": {
+      "default": {
+        "title": "Favicon'u Web Sitesinden İndirin | \nAnında Çıkarıcı",
+        "description": "Favicon'u herhangi bir web sitesinden kolayca indirin. \nFavicon'ları birden çok boyutta çıkarın. \nGeliştiriciler, tasarımcılar ve web yöneticileri için hızlı, ücretsiz bir araç."
       }
     }
   }
