@@ -75,6 +75,23 @@ export async function GET(request: NextRequest, { params: { domain } }: { params
   }
 
   try {
+    if (selectedIcon.href.includes("data:image")) {
+      const base64Data = selectedIcon.href.split(',')[1];
+      const iconBuffer = Buffer.from(base64Data, 'base64');
+      // Calculate execution time
+      const endTime = Date.now();
+      const executionTime = endTime - startTime;
+
+      return new Response(selectedIcon.href, {
+        status: 200,
+        headers: {
+          'Cache-Control': 'public, max-age=86400',
+          'Content-Type': selectedIcon.href.replace(/data:(image-.*?);.*/, '$1'),
+          'Content-Length': iconBuffer.byteLength.toString(),
+          'X-Execution-Time': `${executionTime} ms`, // Add execution time header
+        }
+      });
+    }
     const iconResponse = await fetch(selectedIcon.href, { headers });
     const iconBuffer = await iconResponse.arrayBuffer();
 
