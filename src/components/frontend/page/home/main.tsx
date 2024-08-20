@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import CodeCopyBtn from "@/components/shared/CodeCopyBtn";
 import { Markdown } from "@/components/shared/markdown";
@@ -18,7 +18,7 @@ import { cn } from "@/lib/utils";
 import { ResponseInfo } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import z from "zod";
 import { Faqs } from "../../shared/faqs";
@@ -32,26 +32,25 @@ const FormValueSchema = z.object({
 }); 
 type FormValues = z.infer<typeof FormValueSchema>;
 
-
 export function Main({
   markdownContents
 }: Readonly<{  
-  markdownContents: Record<string, string|undefined>;
+  markdownContents: Record<string, string | undefined>;
 }>) {
   const { block1 } = markdownContents;
   const t = useTranslations();
-  const [fetching,setFetching] = useState<boolean>(false);
-  const [error,setError] = useState<any>(false); 
-  const [info,setInfo] = useState<ResponseInfo|null>(null); 
+  const [fetching, setFetching] = useState<boolean>(false);
+  const [error, setError] = useState<any>(false); 
+  const [info, setInfo] = useState<ResponseInfo | null>(null); 
   const defaultValues: FormValues = { 
     domain: "proxysites.ai"  
   }
-  const [values,setValues] = useState<FormValues>(defaultValues); 
+  const [values, setValues] = useState<FormValues>(defaultValues); 
 
-  let form = useForm<FormValues>({
+  const form = useForm<FormValues>({
     resolver: zodResolver(FormValueSchema),
     defaultValues
-  })
+  });
 
   const faqs = [
     {
@@ -74,35 +73,44 @@ export function Main({
       question: t('frontend.home.faq.qa5.question'),
       answer: t('frontend.home.faq.qa5.answer')
     },
-  ]
+  ];
 
   const { domain } = values;
 
-
-  const handleSubmit =(values: FormValues)=>{
+  const handleSubmit = (values: FormValues) => {
     setFetching(true);
     setError(false); 
     setInfo(null); 
     setValues(values);
     apiClient.get(`/favicon/${values.domain}`)
-    .then((res) => { 
-      setInfo(res as any);
-      setFetching(false);
-    })
-    .catch((error) => {
-      setError(error.message);
-      console.log("error", error);
-      setFetching(false);
-    });
-  }
-  const textCls = "text-primary font-medium"; 
-  const host = window.location.host;
+      .then((res) => { 
+        setInfo(res as any);
+        setFetching(false);
+      })
+      .catch((error) => {
+        setError(error.message);
+        console.log("error", error);
+        setFetching(false);
+      });
+  };
 
-  const imageDefaultUrl = `${process.env.NODE_ENV === 'development' ? "http" : "https"}://${host}/favicon/${domain}`;
-  const imageLargerUrl = `${process.env.NODE_ENV === 'development' ? "http" : "https"}://${host}/favicon/${domain}?larger=true`;
+  const textCls = "text-primary font-medium";
+  const [host, setHost] = useState<string | undefined>(undefined);
+  const [imageDefaultUrl, setImageDefaultUrl] = useState<string | undefined>(undefined);
+  const [imageLargerUrl, setImageLargerUrl] = useState<string | undefined>(undefined);
 
-  const imageDefaultCoce = `<img alt="Favicon" src="${imageDefaultUrl}" />`;
-  const imageLargerCoce = `<img alt="Favicon" src="${imageLargerUrl}" />`;
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const currentHost = window.location.host;
+      setHost(currentHost);
+
+      setImageDefaultUrl(`${process.env.NODE_ENV === 'development' ? "http" : "https"}://${currentHost}/favicon/${domain}`);
+      setImageLargerUrl(`${process.env.NODE_ENV === 'development' ? "http" : "https"}://${currentHost}/favicon/${domain}?larger=true`);
+    }
+  }, [domain]);
+
+  const imageDefaultCoce = imageDefaultUrl ? `<img alt="Favicon" src="${imageDefaultUrl}" />` : "";
+  const imageLargerCoce = imageLargerUrl ? `<img alt="Favicon" src="${imageLargerUrl}" />` : "";
 
   const images: {
     src: string;
@@ -111,20 +119,20 @@ export function Main({
     alt: string;
   }[] = [
     {
-      src: imageDefaultUrl,
+      src: imageDefaultUrl || "",
       title: t("frontend.home.default_size"),
       codeStr: imageDefaultCoce,
-      alt: t("frontend.home.default_size_alt", { domain } )
+      alt: t("frontend.home.default_size_alt", { domain })
     },
     {
-      src: imageLargerUrl,
+      src: imageLargerUrl || "",
       title: t("frontend.home.larger_size"),
       codeStr: imageLargerCoce,
-      alt: t("frontend.home.larger_size_alt", { domain } )
+      alt: t("frontend.home.larger_size_alt", { domain })
     },
-  ] 
+  ];
 
-  const ImageCode = ({ alt, title, src,codeStr}:{src: string; codeStr: string; title: string; alt: string;}) =>{
+  const ImageCode = ({ alt, title, src, codeStr }: { src: string; codeStr: string; title: string; alt: string; }) => {
     return (
       <div>
         <h2 className="text-2xl font-semibold">{title}:</h2>
@@ -139,8 +147,9 @@ export function Main({
           <img alt={alt} className="min-h-[100px] min-w-[100px] bg-secondary rounded-md" src={src} />
         </div>
       </div>
-    )
-  }
+    );
+  };
+
   return (
     <div className={cn("max-w-4xl mx-auto w-full leading-9 text-base")}> 
       <h1 className="text-4xl mb-2 font-extrabold">{appConfig.appName}</h1>
@@ -150,7 +159,7 @@ export function Main({
       </h2> 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(handleSubmit)} className="w-full">
-        <FormField
+          <FormField
             control={form.control}
             name="domain"
             render={({ field }) => (
@@ -165,7 +174,6 @@ export function Main({
               </FormItem>
             )}
           />
-         
         </form>
       </Form>
       {error && <div className="rounded-md border border-red-500 p-10 mb-10">{error}</div>}
