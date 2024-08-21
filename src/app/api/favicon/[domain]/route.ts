@@ -1,41 +1,19 @@
 import { getFavicons } from '@/lib/utils';
 import { ResponseInfo } from '@/types';
 import type { NextRequest } from 'next/server';
-import z from 'zod';
 
 export const runtime = 'edge';
 
-// Define a regex pattern for validating domain names
-const domainRegex = /^(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$/;
-
-// Define the schema with custom domain validation
-const BodySchema = z.object({
-  domain: z.string()
-    .regex(domainRegex, "Invalid domain name format") // Validate domain format
-    .min(1, "Domain name cannot be empty"), // Ensure the domain is not empty
-  headers: z.record(z.string()).optional() // 'headers' is an optional object with string keys and string values
-});
-/**
- * Handles POST requests by accepting JSON data, validating it, and performing a fetch operation.
- * 
- * @param {NextRequest} request - The incoming request object.
- * @returns {Promise<Response>} - A promise that resolves to a response containing the fetch results as JSON.
- */
 export async function GET(request: NextRequest, { params }: { params: { domain: string } }) {
-  const startTime = Date.now(); // Record the start time for calculating the request duration
-
-  // Parse and validate the request body
+  const startTime = Date.now();
   const { domain } = params;
-  try {
-  } catch (error: any) {
-    return new Response(JSON.stringify({ error: { message: error.message } }, null, 2), {
-      status: 400,
-      headers: { 'Content-Type': 'application/json' }
-    });
+
+  // Validate domain name format
+  if (!/^(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$/.test(domain)) {
+    return new Response('Invalid domain name format', { status: 400 });
   }
 
-
-  // Define a helper function to handle the response and set status
+  // Define a helper function to handle the response
   const handleResponse = (data: ResponseInfo, status: number, statusText: string) => {
     const duration = ((Date.now() - startTime) / 1000).toFixed(3);
     return new Response(JSON.stringify({ ...data, duration }, null, 2), {
@@ -45,7 +23,7 @@ export async function GET(request: NextRequest, { params }: { params: { domain: 
     });
   };
 
-  // Attempt to fetch favicons using HTTP
+  // Fetch favicons using HTTP
   let data: ResponseInfo = { url: '', host: '', status: 500, statusText: '', icons: [] };
   let url = `http://${domain}`;
 
@@ -54,27 +32,27 @@ export async function GET(request: NextRequest, { params }: { params: { domain: 
     if (data.status === 530) return handleResponse(data, 530, 'Error 530');
     if (data.icons.length > 0) return handleResponse(data, 200, 'ok');
   } catch (error) {
-    console.error(error);
+    console.error('Error fetching HTTP favicons:', error);
   }
 
-  // Retry using HTTPS if HTTP fails
+  // Retry with HTTPS
   url = `https://${domain}`;
   try {
     data = await getFavicons({ url });
     if (data.status === 530) return handleResponse(data, 530, 'Error 530');
     if (data.icons.length > 0) return handleResponse(data, 200, 'ok');
   } catch (error) {
-    console.error(error);
+    console.error('Error fetching HTTPS favicons:', error);
   }
 
-  // If both HTTP and HTTPS fail, try alternative sources
+  // Try alternative sources
   const sources = [
-    `https://icons.duckduckgo.com/ip3/${encodeURIComponent(domain)}.ico`, // larger
+    `https://icons.duckduckgo.com/ip3/${encodeURIComponent(domain)}.ico`,
     `https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=100`,
-    // `https://icon.horse/icon/${encodeURIComponent(domain)}`
   ];
 
-  const icons: { href: string }[] = [];
+  const icons: { href: string; sizes?: string; }[] = [];
+
   for (const source of sources) {
     try {
       const response = await fetch(source, {
@@ -91,11 +69,27 @@ export async function GET(request: NextRequest, { params }: { params: { domain: 
     }
   }
 
-  // Return a response with no icons if all attempts fail
+  // If all attempts fail, use a placeholder SVG
+  if (icons.length === 0) {
+    const firstLetter = domain.charAt(0).toUpperCase();
+    const svgContent = `
+      <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100%" height="100%" fill="#cccccc"/>
+        <text x="50%" y="50%" font-size="48" text-anchor="middle" dominant-baseline="middle" fill="#000000">${firstLetter}</text>
+      </svg>
+    `;
+    const encodedSvg = encodeURIComponent(svgContent);
+    const base64Svg = `data:image/svg+xml;base64,${btoa(encodedSvg)}`;
+    icons.push({
+      sizes: '100x100',
+      href: base64Svg
+    });
+  }
+
   const duration = ((Date.now() - startTime) / 1000).toFixed(3);
-  return new Response(JSON.stringify({ url, host: new URL(url).host, status: 500, statusText: 'Fail', icons, duration: `${duration} s` }, null, 2), {
-    status: 500,
-    statusText: 'Fail',
+  return new Response(JSON.stringify({ url, host: new URL(url).host, status: 200, statusText: "ok", icons, duration: `${duration} s` }, null, 2), {
+    status: 200,
+    statusText: "ok",
     headers: { 'Content-Type': 'application/json' }
   });
 }
