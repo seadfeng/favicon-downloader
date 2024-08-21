@@ -3,6 +3,15 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - README.md
+      - CHANGELOG
+      - MIT-LICENSE
+      - .env
+      - doc/**
+      - bin/**
+      - .vscode/**
+      - .gitignore
 jobs:
   deploy_preview:
     runs-on: ubuntu-latest
