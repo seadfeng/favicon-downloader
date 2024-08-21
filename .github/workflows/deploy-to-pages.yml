@@ -1,4 +1,4 @@
-name: Deploy Pages
+name: Deploy Production
 on:
   release:
     types:
