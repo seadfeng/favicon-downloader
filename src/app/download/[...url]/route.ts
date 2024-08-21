@@ -6,6 +6,7 @@ export async function GET(request: NextRequest) {
   const url = fullUrl.split(`/download/`)[1];
   let parsedUrl: URL;
   try {
+    console.log("nextUrl.search", nextUrl.search)
     parsedUrl = new URL(url);
     if (!['http:', 'https:'].includes(parsedUrl.protocol)) {
       return NextResponse.json({ error: 'Invalid URL' }, { status: 400 });
