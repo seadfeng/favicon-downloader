@@ -13,6 +13,7 @@ jobs:
     timeout-minutes: 10
     environment:
       name: preview
+      url: https://favicon-preview.pages.dev/
     steps:
       - uses: actions/checkout@v4
       - name: Install dependencies
