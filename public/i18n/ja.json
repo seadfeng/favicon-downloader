@@ -44,7 +44,8 @@
       "default_size": "デフォルトのサイズ",
       "larger_size": "大きいサイズ",
       "default_size_alt": "{ドメイン}のファビコン",
-      "larger_size_alt": "{ドメイン} ファビコン (大きい)"
+      "larger_size_alt": "{ドメイン} ファビコン (大きい)",
+      "get_favicons": "ファビコンを取得する"
     }
   },
   "shared": {

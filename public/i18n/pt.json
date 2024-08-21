@@ -32,7 +32,8 @@
       "default_size": "Tamanho padrão",
       "check": "Verificar",
       "download": "Download",
-      "results_for": "Favoritos para"
+      "results_for": "Favoritos para",
+      "get_favicons": "Obtenha ícones favoritos"
     },
     "meta": {
       "default": {

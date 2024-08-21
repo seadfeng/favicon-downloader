@@ -44,7 +44,8 @@
       "default_size": "Standardgröße",
       "larger_size": "Größere Größe",
       "default_size_alt": "{domain}-Favicon",
-      "larger_size_alt": "{domain} Favicon (größer)"
+      "larger_size_alt": "{domain} Favicon (größer)",
+      "get_favicons": "Holen Sie sich Favicons"
     }
   },
   "shared": {

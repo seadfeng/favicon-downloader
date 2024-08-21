@@ -32,7 +32,8 @@
       "default_size": "Dimensione predefinita",
       "check": "Controllo",
       "download": "Scaricamento",
-      "results_for": "Favicon per"
+      "results_for": "Favicon per",
+      "get_favicons": "Ottieni Favicon"
     },
     "meta": {
       "default": {

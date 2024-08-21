@@ -32,7 +32,8 @@
       "default_size": "Rozmiar domyślny",
       "check": "Sprawdzać",
       "download": "Pobierać",
-      "results_for": "Favicony dla"
+      "results_for": "Favicony dla",
+      "get_favicons": "Zdobądź Favicony"
     },
     "meta": {
       "default": {

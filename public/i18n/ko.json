@@ -32,7 +32,8 @@
       "default_size": "기본 크기",
       "check": "확인하다",
       "download": "다운로드",
-      "results_for": "파비콘"
+      "results_for": "파비콘",
+      "get_favicons": "파비콘 받기"
     },
     "meta": {
       "default": {

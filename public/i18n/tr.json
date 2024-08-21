@@ -32,7 +32,8 @@
       "default_size": "Varsayılan Boyut",
       "check": "Kontrol etmek",
       "download": "İndirmek",
-      "results_for": "Favicon'lar"
+      "results_for": "Favicon'lar",
+      "get_favicons": "Favicon'ları Alın"
     },
     "meta": {
       "default": {

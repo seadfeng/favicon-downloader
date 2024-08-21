@@ -32,7 +32,8 @@
       "default_size": "Standardstorlek",
       "check": "Kontrollera",
       "download": "Ladda ner",
-      "results_for": "Favoriter för"
+      "results_for": "Favoriter för",
+      "get_favicons": "Skaffa favoriter"
     },
     "meta": {
       "default": {

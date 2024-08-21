@@ -44,7 +44,8 @@
       "default_size": "Размер по умолчанию",
       "larger_size": "Больший размер",
       "default_size_alt": "{домен} значок",
-      "larger_size_alt": "Значок {domain} (увеличенный)"
+      "larger_size_alt": "Значок {domain} (увеличенный)",
+      "get_favicons": "Получить значки"
     }
   },
   "shared": {

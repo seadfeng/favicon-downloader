@@ -44,7 +44,8 @@
       "default_size": "Tamaño predeterminado",
       "larger_size": "Tamaño más grande",
       "default_size_alt": "{dominio} favicon",
-      "larger_size_alt": "{dominio} favicon (más grande)"
+      "larger_size_alt": "{dominio} favicon (más grande)",
+      "get_favicons": "Obtener favicons"
     }
   },
   "shared": {

@@ -32,7 +32,8 @@
       "default_size": "Standaardgrootte",
       "check": "Rekening",
       "download": "Downloaden",
-      "results_for": "Favicons voor"
+      "results_for": "Favicons voor",
+      "get_favicons": "Favicons verkrijgen"
     },
     "meta": {
       "default": {
