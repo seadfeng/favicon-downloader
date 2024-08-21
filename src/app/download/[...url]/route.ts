@@ -3,7 +3,6 @@ export const runtime = 'edge';
 export async function GET(request: NextRequest) {
   const { nextUrl } = request;
   let url = nextUrl.href.split(`${nextUrl.host}/download/`)[1];
-  url = decodeURIComponent(url);
   let parsedUrl: URL;
   try {
     parsedUrl = new URL(url);
@@ -19,7 +18,7 @@ export async function GET(request: NextRequest) {
     const response = await fetch(url, { method: 'GET', redirect: "follow" });
 
     if (!response.ok) {
-      throw new Error(`Failed to fetch image: ${response.statusText}`);
+      throw new Error(`Failed to fetch image: ${url}`);
     }
 
     // Get the image as a buffer
