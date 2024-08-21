@@ -4,9 +4,9 @@ export async function GET(request: NextRequest) {
   const { nextUrl } = request;
   let url = nextUrl.href.split(`${nextUrl.host}/download/`)[1];
   url = decodeURIComponent(url);
-
+  let parsedUrl: URL;
   try {
-    const parsedUrl = new URL(url);
+    parsedUrl = new URL(url);
     if (!['http:', 'https:'].includes(parsedUrl.protocol)) {
       return NextResponse.json({ error: 'Invalid URL' }, { status: 400 });
     }
@@ -38,13 +38,13 @@ export async function GET(request: NextRequest) {
 
     const fileExtension = extensionMap[contentType];
 
-    if (!fileExtension) NextResponse.json({ error: 'Content-Type', message: contentType }, { status: 500 });
+    if (!fileExtension) NextResponse.json({ error: 'Unsupported Content-Type', message: contentType }, { status: 415 });
 
     // Create the response with the image buffer and appropriate headers
     return new NextResponse(Buffer.from(imageBuffer), {
       headers: {
         'Content-Type': contentType,
-        'Content-Disposition': `attachment; filename=favicon.${fileExtension}`,
+        'Content-Disposition': `attachment; filename=favicon-${parsedUrl?.host}.${fileExtension}`,
       },
     });
   } catch (error: any) {

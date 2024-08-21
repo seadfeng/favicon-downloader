@@ -43,7 +43,7 @@ function downloadBase64Image({ base64Data, domain }: { base64Data: string, domai
  
   link.href = base64Data;
  
-  link.download = `${domain}.${imgType}`;
+  link.download = `favicon-${domain}.${imgType}`;
  
   document.body.appendChild(link);
  
