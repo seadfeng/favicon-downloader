@@ -147,7 +147,7 @@ Output JSON
 			"href": "https://asset.proxysites.ai/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--e702ab3bb2a064d7cc1961d5791a9cf8066b8c7f/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJwbmciLCJyZXNpemUiOjE2fSwicHVyIjoidmFyaWF0aW9uIn19--a249ec28617db7ea4309a9d13a2b4b43d8876d4e/proxy%20sites.png"
 		}
 	],
-	"duration": "5.540"
+	"duration": "5.540 s"
 }
 ```
  
