@@ -22,13 +22,17 @@ export async function GET(request: NextRequest, { params: { domain } }: { params
   if (larger) {
     const duckduckgoUrl = `https://icons.duckduckgo.com/ip3/${asciiDomain}.ico`;
     console.log("Ico source:", duckduckgoUrl);
-    const response = await fetch(duckduckgoUrl, {
-      method: request.method,
-      headers: request.headers,
-      redirect: 'follow'
-    });
-    if (response.status === 200) {
-      return response;
+    try {
+      const response = await fetch(duckduckgoUrl, {
+        method: request.method,
+        headers: request.headers,
+        redirect: 'follow'
+      });
+      if (response.status === 200) {
+        return response;
+      }
+    } catch (error: any) {
+      console.error(error.message);
     }
   }
 

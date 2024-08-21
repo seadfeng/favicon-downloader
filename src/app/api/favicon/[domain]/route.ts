@@ -71,7 +71,7 @@ export async function GET(request: NextRequest, { params }: { params: { domain: 
   const sources = [
     `https://icons.duckduckgo.com/ip3/${encodeURIComponent(domain)}.ico`, // larger
     `https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=100`,
-    `https://icon.horse/icon/${encodeURIComponent(domain)}`
+    // `https://icon.horse/icon/${encodeURIComponent(domain)}`
   ];
 
   const icons: { href: string }[] = [];
@@ -86,13 +86,6 @@ export async function GET(request: NextRequest, { params }: { params: { domain: 
       if (response.status === 200) {
         icons.push({ href: source });
       }
-
-      const duration = ((Date.now() - startTime) / 1000).toFixed(3);
-      return new Response(JSON.stringify({ url, host: new URL(url).host, status: response.status, statusText: response.statusText, icons, duration: `${duration} s` }, null, 2), {
-        status: response.status,
-        statusText: response.statusText,
-        headers: { 'Content-Type': 'application/json' }
-      });
     } catch (error) {
       console.error(`Error fetching from ${source}: ${error}`);
     }

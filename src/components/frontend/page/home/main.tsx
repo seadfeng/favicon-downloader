@@ -21,7 +21,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import z from "zod";
 import { Faqs } from "../../shared/faqs";
-import ImageCode from "../../shared/image";
+import ImageCode from "../../shared/image-code";
 import { Results } from "./results";
 
 // Regular expression to validate a domain name
@@ -131,6 +131,67 @@ export function Main({
       alt: t("frontend.home.larger_size_alt", { domain })
     },
   ];
+
+  const infos = {
+    "url": "https://www.proxysites.ai/",
+    "host": "www.proxysites.ai",
+    "status": 200,
+    "statusText": "OK",
+    "icons": [
+      {
+        "sizes": "57x57",
+        "href": "https://asset.proxysites.ai/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--e702ab3bb2a064d7cc1961d5791a9cf8066b8c7f/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJwbmciLCJyZXNpemUiOjU3fSwicHVyIjoidmFyaWF0aW9uIn19--92e4e3f0c3ca444ac909ff07bd729cc0955c9a41/proxy%20sites.png"
+      },
+      {
+        "sizes": "60x60",
+        "href": "https://asset.proxysites.ai/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--e702ab3bb2a064d7cc1961d5791a9cf8066b8c7f/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJwbmciLCJyZXNpemUiOjYwfSwicHVyIjoidmFyaWF0aW9uIn19--b326659caec69b9d03bb3212d330eb7f2de4867f/proxy%20sites.png"
+      },
+      {
+        "sizes": "72x72",
+        "href": "https://asset.proxysites.ai/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--e702ab3bb2a064d7cc1961d5791a9cf8066b8c7f/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJwbmciLCJyZXNpemUiOjcyfSwicHVyIjoidmFyaWF0aW9uIn19--dda0b07b7faabd93b896f61bd0b8121fe7535812/proxy%20sites.png"
+      },
+      {
+        "sizes": "114x114",
+        "href": "https://asset.proxysites.ai/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--e702ab3bb2a064d7cc1961d5791a9cf8066b8c7f/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJwbmciLCJyZXNpemUiOjExNH0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--e341749eca680cb3ab159803041920833c7147ed/proxy%20sites.png"
+      },
+      {
+        "sizes": "120x120",
+        "href": "https://asset.proxysites.ai/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--e702ab3bb2a064d7cc1961d5791a9cf8066b8c7f/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJwbmciLCJyZXNpemUiOjEyMH0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--2876e6c7d56a4676f98b9461a6c157748dd7f3d8/proxy%20sites.png"
+      },
+      {
+        "sizes": "144x144",
+        "href": "https://asset.proxysites.ai/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--e702ab3bb2a064d7cc1961d5791a9cf8066b8c7f/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJwbmciLCJyZXNpemUiOjE0NH0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--2ef73b7782ea6acca11f4bf18278d20df3ebedc7/proxy%20sites.png"
+      },
+      {
+        "sizes": "152x152",
+        "href": "https://asset.proxysites.ai/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--e702ab3bb2a064d7cc1961d5791a9cf8066b8c7f/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJwbmciLCJyZXNpemUiOjE1Mn0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--5d7e7888c54038462f7d0f5dfcaf9bfb763542b6/proxy%20sites.png"
+      },
+      {
+        "sizes": "180x180",
+        "href": "https://asset.proxysites.ai/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--e702ab3bb2a064d7cc1961d5791a9cf8066b8c7f/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJwbmciLCJyZXNpemUiOjE4MH0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--3607f5859d231a899f00f3075e5ede351a3881a1/proxy%20sites.png"
+      },
+      {
+        "sizes": "512x512",
+        "href": "https://asset.proxysites.ai/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--e702ab3bb2a064d7cc1961d5791a9cf8066b8c7f/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJwbmciLCJyZXNpemUiOjUxMn0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--0681236ad6684680624efd9dab9c9b0fd921b448/proxy%20sites.png"
+      },
+      {
+        "sizes": "192x192",
+        "href": "https://asset.proxysites.ai/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--e702ab3bb2a064d7cc1961d5791a9cf8066b8c7f/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJwbmciLCJyZXNpemUiOjE5Mn0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--f90210217333a1ec45f7289db3308a24a9ca1c30/proxy%20sites.png"
+      },
+      {
+        "sizes": "96x96",
+        "href": "https://asset.proxysites.ai/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--e702ab3bb2a064d7cc1961d5791a9cf8066b8c7f/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJwbmciLCJyZXNpemUiOjk2fSwicHVyIjoidmFyaWF0aW9uIn19--75ad1335c5be72203ba8104f040ae0eae34ae312/proxy%20sites.png"
+      },
+      {
+        "sizes": "32x32",
+        "href": "https://asset.proxysites.ai/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--e702ab3bb2a064d7cc1961d5791a9cf8066b8c7f/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJwbmciLCJyZXNpemUiOjMyfSwicHVyIjoidmFyaWF0aW9uIn19--c8c4db84a6a282f606e045537f16130bddb1019f/proxy%20sites.png"
+      },
+      { 
+        "href": "https://asset.proxysites.ai/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--e702ab3bb2a064d7cc1961d5791a9cf8066b8c7f/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJwbmciLCJyZXNpemUiOjE2fSwicHVyIjoidmFyaWF0aW9uIn19--a249ec28617db7ea4309a9d13a2b4b43d8876d4e/proxy%20sites.png"
+      }
+    ],
+    "duration": "5.540"
+  }
  
 
   return (
@@ -161,7 +222,7 @@ export function Main({
       </Form>
       {error && <div className="rounded-md border border-red-500 p-10 mb-10">{error}</div>}
       {fetching && <Skeleton className="h-72 w-full rounded-md mb-8" />}  
-      {info && <Results info={info} />}  
+      {infos && <Results info={infos} />}  
       {host && images.map(image => <ImageCode {...image} key={image.src} />)} 
       {block1 && <Markdown content={block1} className="mt-10" />}
       <Faqs faqs={faqs} title={t('frontend.home.faq.title')} />
