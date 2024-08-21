@@ -12,7 +12,7 @@ jobs:
     name: Publish to Cloudflare Pages
     timeout-minutes: 10
     environment:
-      name: production
+      name: preview
     steps:
       - uses: actions/checkout@v4
       - name: Install dependencies
