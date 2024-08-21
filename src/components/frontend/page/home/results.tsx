@@ -88,8 +88,8 @@ const IconImage = ({ icon, index, domain }: { icon: any; index: number; domain: 
           <span className="w-full">
             {index + 1}. Sizes {sizes}
           </span>
-          <a href={`/download/${icon.href}`} onClick={(e)=>{ 
-            if( /^data:image\//.test(icon.href)){
+          <a href={ /^data:image\//.test(icon.href) ? icon.href : `/download/${icon.href}`} onClick={(e)=>{ 
+            if( /^data:image\//.test(icon.href) ){
               e.preventDefault();
               downloadBase64Image({domain , base64Data: icon.href} ) 
             } 
