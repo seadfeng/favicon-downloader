@@ -2,7 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 export const runtime = 'edge';
 export async function GET(request: NextRequest) {
   const { nextUrl } = request;
-  let url = nextUrl.href.split(`${nextUrl.host}/download/`)[1];
+  const fullUrl = `${nextUrl.pathname}${nextUrl.search}`;
+  const url = fullUrl.split(`/download/`)[1];
   let parsedUrl: URL;
   try {
     parsedUrl = new URL(url);
