@@ -78,8 +78,7 @@ export async function GET(request: NextRequest, { params }: { params: { domain: 
         <text x="50%" y="50%" font-size="48" text-anchor="middle" dominant-baseline="middle" fill="#000000">${firstLetter}</text>
       </svg>
     `;
-    const encodedSvg = encodeURIComponent(svgContent);
-    const base64Svg = `data:image/svg+xml;base64,${btoa(encodedSvg)}`;
+    const base64Svg = `data:image/svg+xml;base64,${btoa(svgContent)}`;
     icons.push({
       sizes: '100x100',
       href: base64Svg
