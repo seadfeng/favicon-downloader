@@ -1,10 +1,10 @@
 name: Deploy Pages
 on:
-  release:
-    types:
-      - published
+  push:
+    branches:
+      - main
 jobs:
-  deploy_production:
+  deploy_preview:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -23,10 +23,11 @@ jobs:
             -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}")
           if [ $response -eq 404 ]; then
             echo "Project does not exist, creating..."
-            npx wrangler pages project create favicon --production-branch main
+            npx wrangler pages project create favicon-preview --production-branch main
           else
             echo "Project exists, skipping creation."
           fi
+          sed -i 's/favicon/favicon-preview/' wrangler.toml
           npm run deploy 
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
