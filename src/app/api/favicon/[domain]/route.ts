@@ -62,7 +62,7 @@ export async function GET(request: NextRequest, { params }: { params: { domain: 
       });
 
       if (response.status === 200) {
-        icons.push({ href: source });
+        icons.push({ href: source, sizes: "unknown" });
       }
     } catch (error) {
       console.error(`Error fetching from ${source}: ${error}`);
