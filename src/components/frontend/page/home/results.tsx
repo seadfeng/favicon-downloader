@@ -3,7 +3,56 @@ import { SearchCheckIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from 'react';
 
-const IconImage = ({ icon, index }: { icon: any; index: number; }) => {
+function downloadBase64Image({ base64Data, domain }: { base64Data: string, domain: string }) { 
+  const link = document.createElement('a');
+ 
+  const mimeTypeMatch = base64Data.match(/^data:(image\/[\w+]+);base64,/);
+  
+  let imgType = 'png';  
+  if (mimeTypeMatch && mimeTypeMatch[1]) {
+    const mimeType = mimeTypeMatch[1];
+    switch (mimeType) {
+      case 'image/jpeg':
+        imgType = 'jpg';
+        break;
+      case 'image/png':
+        imgType = 'png';
+        break;
+      case 'image/gif':
+        imgType = 'gif';
+        break;
+      case 'image/webp':
+        imgType = 'webp';
+        break;
+      case 'image/bmp':
+        imgType = 'bmp';
+        break;
+      case 'image/tiff':
+        imgType = 'tiff';
+        break;
+      case 'image/svg+xml':
+        imgType = 'svg';
+        break;
+      default:
+        console.warn(`Unsupported image type: ${mimeType}. Defaulting to png.`);
+        imgType = 'png';
+    }
+  } else {
+    console.warn('Could not determine image type from base64 data. Defaulting to png.');
+  }
+ 
+  link.href = base64Data;
+ 
+  link.download = `${domain}.${imgType}`;
+ 
+  document.body.appendChild(link);
+ 
+  link.click();
+ 
+  document.body.removeChild(link);
+}
+
+const IconImage = ({ icon, index, domain }: { icon: any; index: number; domain: string; }) => {
   const t = useTranslations();
   const [sizes, setSizes] = useState<string>(icon.sizes);
   const imgRef = useRef<HTMLImageElement>(null);
@@ -39,7 +88,12 @@ const IconImage = ({ icon, index }: { icon: any; index: number; }) => {
           <span className="w-full">
             {index + 1}. Sizes {sizes}
           </span>
-          <a href={`/download/${icon.href}`} target="_blank" rel="noopener noreferrer" className="text-primary text-sm mt-auto">
+          <a href={`/download/${icon.href}`} onClick={(e)=>{ 
+            if( /^data:image\//.test(icon.href)){
+              e.preventDefault();
+              downloadBase64Image({domain , base64Data: icon.href} ) 
+            } 
+          }} target="_blank" rel="noopener noreferrer" className="text-primary text-sm mt-auto">
             {t('frontend.home.download')}
           </a>
         </div>
@@ -57,7 +111,7 @@ export const Results = ({ info }: { info: ResponseInfo }) => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
       {info.icons.map((icon, index) =>
         <div key={index}> 
-          <IconImage icon={icon} index={index} />
+          <IconImage icon={icon} index={index} domain={ info.host }/>
         </div> 
       )}
       </div>
