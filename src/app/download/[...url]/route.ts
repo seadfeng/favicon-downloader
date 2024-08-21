@@ -5,7 +5,8 @@ export async function GET(request: NextRequest) {
   nextUrl.searchParams.delete("url");
   let search = nextUrl.searchParams.toString();
   if (search) search = `?${search}`;
-  const url = `${nextUrl.pathname}${search}`;
+  const url = `${nextUrl.pathname}${search}`.split(`/download/`)[1];
+
   let parsedUrl: URL;
   try {
     parsedUrl = new URL(url);
