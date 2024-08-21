@@ -19,7 +19,7 @@ jobs:
         run: npm install
       - name: Deploy to Cloudflare Pages
         run: |
-          response=$(curl -s -o /dev/null -w "%{http_code}" -X GET "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CLOUDFLARE_ACCOUNT_ID }}/pages/projects/favicon" \
+          response=$(curl -s -o /dev/null -w "%{http_code}" -X GET "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CLOUDFLARE_ACCOUNT_ID }}/pages/projects/favicon-preview" \
             -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}")
           if [ $response -eq 404 ]; then
             echo "Project does not exist, creating..."
