@@ -2,11 +2,12 @@ import { NextRequest, NextResponse } from 'next/server';
 export const runtime = 'edge';
 export async function GET(request: NextRequest) {
   const { nextUrl } = request;
-  const fullUrl = `${nextUrl.pathname}${nextUrl.search}`;
-  const url = fullUrl.split(`/download/`)[1];
+  nextUrl.searchParams.delete("url");
+  let search = nextUrl.searchParams.toString();
+  if (search) search = `?${search}`;
+  const url = `${nextUrl.pathname}${search}`;
   let parsedUrl: URL;
   try {
-    console.log("nextUrl.search", nextUrl.search)
     parsedUrl = new URL(url);
     if (!['http:', 'https:'].includes(parsedUrl.protocol)) {
       return NextResponse.json({ error: 'Invalid URL' }, { status: 400 });
