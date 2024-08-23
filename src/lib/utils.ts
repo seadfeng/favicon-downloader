@@ -1,4 +1,4 @@
-import { appConfig } from "@/config";
+import { appConfig, LocaleType } from "@/config";
 import { ResponseInfo } from "@/types";
 import { type ClassValue, clsx } from "clsx";
 import { NextRequest } from "next/server";
@@ -9,10 +9,38 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-// Generate a canonical link based on the environment
-export const canonicalLink = (domain: string, pathname: string) => {
-  const isProduction = process.env.NODE_ENV === 'production';
-  return `${isProduction ? "https" : "http"}://${domain}${pathname}`;
+export const getOrigin = ({ headers }: { headers: Headers }) => {
+  const host = headers.get('host') || appConfig.appDomain;
+
+  const protocol = ['localhost', '127.0.0.1'].includes(host.split(":")[0]) ? 'http' : 'https';
+  return `${protocol}://${host}`;
+}
+
+export const getCanonical = ({ headers }: { headers: Headers }) => {
+  const origin = getOrigin({ headers });
+  const url = new URL(headers.get("x-request-url")!);
+  return `${origin}${url.pathname}`;
+}
+
+export const createAlternates = ({ headers, canonical }: { headers: Headers; canonical: string; }) => {
+  let languages = {} as Record<LocaleType, string>;
+  const linkStr = headers.get("Link")!;
+  const links = linkStr.split(',');
+  links.forEach(alternateStr => {
+    const match = alternateStr.match(/<(.*)>;.*hreflang="(.*)"/);
+    if (match && match[1]) {
+      if (match[2] !== "x-default") {
+        languages[match[2] as LocaleType] = match[1];
+      } else {
+        languages[appConfig.i18n.defaultLocale] = match[1];
+      }
+    }
+  })
+
+  return {
+    canonical,
+    languages
+  }
 }
 
 // Fetch favicons from a given URL and return ResponseInfo
@@ -125,13 +153,4 @@ export const proxyFavicon = async ({ domain, request }: { domain: string; reques
     });
   }
 
-};
-
-
-
-export const getOrigin = ({ headers }: { headers: Headers }) => {
-  const host = headers.get('host') || appConfig.appDomain;
-
-  const protocol = ['localhost', '127.0.0.1'].includes(host.split(":")[0]) ? 'http' : 'https';
-  return `${protocol}://${host}`;
-}
+}; 

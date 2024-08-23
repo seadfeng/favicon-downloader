@@ -1,13 +1,14 @@
 
 import { appConfig, type LocaleType } from "@/config";
 import getRequestConfig from "@/i18n";
-import { cn } from "@/lib/utils";
+import { cn, createAlternates, getCanonical } from "@/lib/utils";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { ThemeProvider } from "next-themes";
 import { JetBrains_Mono as FontMono } from "next/font/google";
+import { headers } from "next/headers";
 import { notFound } from "next/navigation";
 import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
@@ -20,13 +21,19 @@ const fontMono = FontMono({
 
 export async function generateMetadata({ params }:{ params: any }): Promise<Metadata> { 
   const t = await getTranslations(params); 
+  const headersList = headers();
+
   return {
     title: {
       absolute: t('frontend.meta.default.title'),
       default: t('frontend.meta.default.title'),
       template: `%s - ${appConfig.appRootDomain}`,
     },
-    description: t('frontend.meta.default.description')
+    description: t('frontend.meta.default.description'),
+    alternates: createAlternates({
+      canonical: getCanonical({headers: headersList}),
+      headers: headersList
+    })
   };
 }
 
