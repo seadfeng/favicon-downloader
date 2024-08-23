@@ -1,3 +1,4 @@
+import { appConfig } from "@/config";
 import { ResponseInfo } from "@/types";
 import { type ClassValue, clsx } from "clsx";
 import { NextRequest } from "next/server";
@@ -125,3 +126,12 @@ export const proxyFavicon = async ({ domain, request }: { domain: string; reques
   }
 
 };
+
+
+
+export const getOrigin = ({ headers }: { headers: Headers }) => {
+  const host = headers.get('host') || appConfig.appDomain;
+
+  const protocol = ['localhost', '127.0.0.1'].includes(host.split(":")[0]) ? 'http' : 'https';
+  return `${protocol}://${host}`;
+}

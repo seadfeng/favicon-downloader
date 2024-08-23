@@ -58,10 +58,12 @@ const loadComponentsMarkdown = async () => {
 }
 export const getComponentMarkdown = async ({
   locale,
-  componentPathName
+  componentPathName,
+  origin
 }: {
   locale: LocaleType;
   componentPathName: string;
+  origin: string;
 }): Promise<string | undefined> => {
   const componentsMarkdownData = await loadComponentsMarkdown();
   if (!componentsMarkdownData) return undefined;
@@ -74,7 +76,7 @@ export const getComponentMarkdown = async ({
 
   const filePath = `/${contentComponentsMarkdownDir}/${componentPathName}/${currentLocale}.md`;
   try {
-    const response = await fetch(`${appConfig.origin}${filePath}`);
+    const response = await fetch(`${origin}${filePath}`);
     return await response.text();
   } catch (error) {
     console.error(`Error reading Markdown file: ${error}`);
