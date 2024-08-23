@@ -1,0 +1,4 @@
+services:
+  app:
+    image: favicon-downloader:latest
+    env_file: .env

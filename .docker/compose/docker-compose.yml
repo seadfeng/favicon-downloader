@@ -1,0 +1,7 @@
+services:
+  app:
+    extends:
+      file: services.yml
+      service: app
+    ports:
+      - 127.0.0.1:3000:3000
