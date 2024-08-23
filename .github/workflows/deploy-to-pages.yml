@@ -23,11 +23,11 @@ jobs:
             -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}")
           if [ $response -eq 404 ]; then
             echo "Project does not exist, creating..."
-            npx wrangler pages project create favicon --production-branch main
+            npx wrangler pages project create favicon --production-branch ${{ github.ref_name }}
           else
             echo "Project exists, skipping creation."
           fi
-          npm run deploy 
+          npm run pages:build && wrangler pages deploy --production-branch ${{ github.ref_name }}
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
