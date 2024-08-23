@@ -12,6 +12,7 @@ import nextIntlPlugin from "next-intl/plugin";
 const withNextIntl = nextIntlPlugin("./src/i18n.ts");
 
 const nextConfig = {
+  output: 'standalone',
   eslint: {
     dirs: ["src"],
   },
