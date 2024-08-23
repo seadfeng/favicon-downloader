@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install dependencies
         run: npm install
-      - name: Deploy to Cloudflare Pages
+      - name: Build
         run: |
           response=$(curl -s -o /dev/null -w "%{http_code}" -X GET "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CLOUDFLARE_ACCOUNT_ID }}/pages/projects/favicon" \
             -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}")
