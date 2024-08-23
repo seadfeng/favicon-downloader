@@ -1,7 +1,7 @@
 
 import { appConfig, type LocaleType } from "@/config";
 import getRequestConfig from "@/i18n";
-import { cn, createAlternates, getCanonical } from "@/lib/utils";
+import { cn, createAlternates } from "@/lib/utils";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
@@ -30,10 +30,7 @@ export async function generateMetadata({ params }:{ params: any }): Promise<Meta
       template: `%s - ${appConfig.appRootDomain}`,
     },
     description: t('frontend.meta.default.description'),
-    alternates: createAlternates({
-      canonical: getCanonical({headers: headersList}),
-      headers: headersList
-    })
+    alternates: createAlternates({  headers: headersList })
   };
 }
 

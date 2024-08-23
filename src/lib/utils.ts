@@ -22,7 +22,7 @@ export const getCanonical = ({ headers }: { headers: Headers }) => {
   return `${origin}${url.pathname}`;
 }
 
-export const createAlternates = ({ headers, canonical }: { headers: Headers; canonical: string; }) => {
+export const createAlternates = ({ headers }: { headers: Headers; }) => {
   let languages = {} as Record<LocaleType, string>;
   const linkStr = headers.get("Link")!;
   const links = linkStr.split(',');
@@ -38,7 +38,7 @@ export const createAlternates = ({ headers, canonical }: { headers: Headers; can
   })
 
   return {
-    canonical,
+    canonical: getCanonical({ headers }),
     languages
   }
 }
