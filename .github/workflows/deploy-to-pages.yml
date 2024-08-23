@@ -27,7 +27,7 @@ jobs:
           else
             echo "Project exists, skipping creation."
           fi
-          npm run pages:build && wrangler pages deploy --production-branch ${{ github.ref_name }}
+          npm run pages:build && npx wrangler pages deploy --production-branch ${{ github.ref_name }}
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
