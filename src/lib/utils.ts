@@ -11,12 +11,12 @@ export function cn(...inputs: ClassValue[]) {
 
 export const getOrigin = ({ headers }: { headers: Headers }) => {
   const url = new URL(headers.get("x-request-url")!);
-  return `${url.protocol}://${url.host}`;
+  return `${url.protocol}//${url.host}`;
 }
 
 export const getCanonical = ({ headers }: { headers: Headers }) => {
   const url = new URL(headers.get("x-request-url")!);
-  return `${url.protocol}://${url.host}${url.pathname}`;
+  return `${url.protocol}//${url.host}${url.pathname}`;
 }
 
 export const createAlternates = ({ headers }: { headers: Headers; }) => {

@@ -102,10 +102,10 @@ export function Main({
   useEffect(() => {
     if (typeof window !== "undefined") {
       const currentHost = window.location.host;
-      const protocol = window.location.protocol;
+      const protocol = window.location.protocol; 
       setHost(currentHost); 
-      setImageDefaultUrl(`${protocol}://${currentHost}/favicon/${domain}`);
-      setImageLargerUrl(`${protocol}://${currentHost}/favicon/${domain}?larger=true`);
+      setImageDefaultUrl(`${protocol}//${currentHost}/favicon/${domain}`);
+      setImageLargerUrl(`${protocol}//${currentHost}/favicon/${domain}?larger=true`);
     }
   }, [domain]);
 
