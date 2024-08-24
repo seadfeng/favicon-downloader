@@ -1,4 +1,4 @@
 services:
   app:
-    image: favicon-downloader:latest
+    image: seadfeng/favicon-downloader:latest
     env_file: .env

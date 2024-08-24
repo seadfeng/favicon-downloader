@@ -5,13 +5,15 @@
 sh ./bin/docker.sh
 ```
 
-## Start
+### Start
 
 ```sh
 docker run -p 3000:3000 favicon-downloader:latest
+```
 
-# or
+## Start with docker-compose.yml
 
+```sh
 cd .docker/compose && docker compose up -d
 ```
 
