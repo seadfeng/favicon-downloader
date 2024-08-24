@@ -10,16 +10,13 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const getOrigin = ({ headers }: { headers: Headers }) => {
-  const host = headers.get('host') || appConfig.appDomain;
-
-  const protocol = ['localhost', '127.0.0.1'].includes(host.split(":")[0]) ? 'http' : 'https';
-  return `${protocol}://${host}`;
+  const url = new URL(headers.get("x-request-url")!);
+  return `${url.protocol}://${url.host}`;
 }
 
 export const getCanonical = ({ headers }: { headers: Headers }) => {
-  const origin = getOrigin({ headers });
   const url = new URL(headers.get("x-request-url")!);
-  return `${origin}${url.pathname}`;
+  return `${url.protocol}://${url.host}${url.pathname}`;
 }
 
 export const createAlternates = ({ headers }: { headers: Headers; }) => {
