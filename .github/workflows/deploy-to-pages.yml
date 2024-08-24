@@ -28,8 +28,7 @@ jobs:
           echo "Build: ${APP}.${VERSION}" 
 
           docker buildx build \
-             --push \
-            --no-cache \
+            --push \
             --platform linux/amd64,linux/arm64/v8 \
             --build-arg VERSION=$VERSION \
             -t ${{ github.actor }}/${APP}:$VERSION \
