@@ -30,6 +30,7 @@ jobs:
           docker buildx build \
              --push \
             --no-cache \
+            --platform linux/amd64,linux/arm64/v8 \
             --build-arg VERSION=$VERSION \
             -t ${{ github.actor }}/${APP}:$VERSION \
             -t ${{ github.actor }}/${APP}:latest \
