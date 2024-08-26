@@ -34,6 +34,7 @@ const ImageCode = ({ alt, title, src, codeStr, className}: { src: string; codeSt
 
   return (
     <div className={className}>
+      <h2 className="text-2xl font-semibold">{title}:</h2>
       <div className="max-w-[300px] my-5">
         <Image 
           src={src} 
@@ -44,7 +45,6 @@ const ImageCode = ({ alt, title, src, codeStr, className}: { src: string; codeSt
           loading="lazy" 
         />
       </div>
-      <h2 className="text-2xl font-semibold">{title}:</h2>
       <pre className="bg-secondary p-4 rounded-md flex items-center overflow-hidden relative my-5">
         <code className="text-sm">
           {codeStr}
