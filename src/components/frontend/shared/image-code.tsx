@@ -25,24 +25,15 @@ const ImageCode = ({ alt, title, src, codeStr, className}: { src: string; codeSt
   if (!dimensions) {
     return(
       <div className="mb-5">
+        <Skeleton className="h-36 w-36 rounded-md mb-5" />
         <Skeleton className="h-10 w-52 rounded-md mb-5" />
         <Skeleton className="h-16 w-full rounded-md mb-5" />
-        <Skeleton className="h-10 w-52 rounded-md mb-5" />
-        <Skeleton className="h-36 w-36 rounded-md mb-5" />
       </div>
     );
   }
 
   return (
     <div className={className}>
-      <h2 className="text-2xl font-semibold">{title}:</h2>
-      <pre className="bg-secondary p-4 rounded-md flex items-center overflow-hidden relative my-5">
-        <code className="text-sm">
-          {codeStr}
-        </code>
-        <CodeCopyBtn>{codeStr}</CodeCopyBtn>
-      </pre>
-      <div className="text-xl">{t('frontend.home.rendered')}:</div> 
       <div className="max-w-[300px] my-5">
         <Image 
           src={src} 
@@ -53,6 +44,13 @@ const ImageCode = ({ alt, title, src, codeStr, className}: { src: string; codeSt
           loading="lazy" 
         />
       </div>
+      <h2 className="text-2xl font-semibold">{title}:</h2>
+      <pre className="bg-secondary p-4 rounded-md flex items-center overflow-hidden relative my-5">
+        <code className="text-sm">
+          {codeStr}
+        </code>
+        <CodeCopyBtn>{codeStr}</CodeCopyBtn>
+      </pre> 
     </div>
   );
 };
