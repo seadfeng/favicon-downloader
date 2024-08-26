@@ -25,8 +25,8 @@ const ImageCode = ({ alt, title, src, codeStr, className}: { src: string; codeSt
   if (!dimensions) {
     return(
       <div className="mb-5">
-        <Skeleton className="h-36 w-36 rounded-md mb-5" />
         <Skeleton className="h-10 w-52 rounded-md mb-5" />
+        <Skeleton className="h-36 w-36 rounded-md mb-5" />
         <Skeleton className="h-16 w-full rounded-md mb-5" />
       </div>
     );
