@@ -55,11 +55,14 @@ function isBrowser() {
   return typeof window !== 'undefined' && typeof navigator !== 'undefined';
 }
 const IconImage = ({ icon, index, onLoad, domain }: { icon: any; index: number; domain: string; onLoad?: (sizes: string)=> void  }) => { 
+  if (!isBrowser()) {
+    return null;
+  }
   const [sizes, setSizes] = useState<string>(icon.sizes);
   const imgRef = useRef<HTMLImageElement>(null);
   const t = useTranslations();
   useEffect(() => {
-    if (isBrowser() &&imgRef.current) {
+    if (isBrowser() && imgRef.current) {
       const img = imgRef.current;
       const handleImageLoad = () => {
         setSizes(`${img.naturalWidth}x${img.naturalHeight}`);

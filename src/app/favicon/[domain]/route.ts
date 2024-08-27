@@ -1,4 +1,4 @@
-import { getFavicons, proxyFavicon } from '@/lib/utils';
+import { getFavicons, proxyFavicon } from '@/lib/server';
 import { ResponseInfo } from '@/types';
 import type { NextRequest } from 'next/server';
 export const runtime = 'edge';

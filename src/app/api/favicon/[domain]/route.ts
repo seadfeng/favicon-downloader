@@ -1,4 +1,4 @@
-import { getFavicons } from '@/lib/utils';
+import { getFavicons } from '@/lib/server';
 import { ResponseInfo } from '@/types';
 import type { NextRequest } from 'next/server';
 
