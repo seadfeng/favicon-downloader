@@ -39,7 +39,7 @@ const downloadImagesAsZip = async (icons: { href: string, sizes?: string }[], do
     if (/^data:image\//.test(href)) {
       return addBase64Image({ zip: folder!, base64Data: href, domain, index, sizes });
     } else {
-      return await addUrlImage({ zip: folder!, href, domain, index, sizes });
+      return await addUrlImage({ zip: folder!, href: `/download/${href}`, domain, index, sizes });
     }
   });
 
