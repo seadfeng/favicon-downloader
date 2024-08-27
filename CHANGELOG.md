@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.2.2.rc
+
+Add Download Zip
+
 ## 0.2.1.rc
 
 Update UI
