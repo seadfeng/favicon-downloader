@@ -1,6 +1,6 @@
 "use client";
 import { Button } from '@/components/ui/button';
-import { downloadBase64Image, getBase64MimeType } from '@/lib/utils';
+import { downloadBase64Image, getBase64MimeType, getImageMimeType } from '@/lib/utils';
 import { ResponseInfo } from '@/types';
 import { saveAs } from 'file-saver';
 import JSZip from 'jszip';
@@ -12,7 +12,7 @@ import { useEffect, useRef, useState } from 'react';
 function fetchImage(url: string): Promise<{ blob: Blob, extension: string }> {
   return fetch(url).then(response => {
     const contentType = response.headers.get('Content-Type') || '';
-    const extension = contentType.split('/')[1] || 'png'; // Default to 'png' if content type is missing
+    const extension = getImageMimeType(contentType);
     return response.blob().then(blob => ({ blob, extension }));
   });
 }

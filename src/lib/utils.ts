@@ -167,39 +167,42 @@ export const downloadBase64Image = ({ base64Data, domain }: { base64Data: string
 
   document.body.removeChild(link);
 }
+
+export const getImageMimeType = (contentType: string) => {
+  let imgType = 'png';
+  switch (contentType) {
+    case 'image/jpeg':
+      imgType = 'jpg';
+      break;
+    case 'image/png':
+      imgType = 'png';
+      break;
+    case 'image/gif':
+      imgType = 'gif';
+      break;
+    case 'image/webp':
+      imgType = 'webp';
+      break;
+    case 'image/bmp':
+      imgType = 'bmp';
+      break;
+    case 'image/tiff':
+      imgType = 'tiff';
+      break;
+    case 'image/svg+xml':
+      imgType = 'svg';
+      break;
+    default:
+      console.warn(`Unsupported image type: ${contentType}. Defaulting to png.`);
+      imgType = 'png';
+  }
+  return imgType;
+}
 export const getBase64MimeType = (base64Data: string): string => {
   const mimeTypeMatch = base64Data.match(/^data:(image\/[\w+]+);base64,/);
 
-  let imgType = 'png';
   if (mimeTypeMatch && mimeTypeMatch[1]) {
-    const mimeType = mimeTypeMatch[1];
-    switch (mimeType) {
-      case 'image/jpeg':
-        imgType = 'jpg';
-        break;
-      case 'image/png':
-        imgType = 'png';
-        break;
-      case 'image/gif':
-        imgType = 'gif';
-        break;
-      case 'image/webp':
-        imgType = 'webp';
-        break;
-      case 'image/bmp':
-        imgType = 'bmp';
-        break;
-      case 'image/tiff':
-        imgType = 'tiff';
-        break;
-      case 'image/svg+xml':
-        imgType = 'svg';
-        break;
-      default:
-        console.warn(`Unsupported image type: ${mimeType}. Defaulting to png.`);
-        imgType = 'png';
-    }
-    return imgType;
+    return getImageMimeType(mimeTypeMatch[1])
   } else {
     throw new Error("Base64Data Error");
   }
