@@ -27,7 +27,11 @@ const downloadImagesAsZip = (icons: { href: string, sizes?: string }[], domain: 
     const JSZip = JSZipModule.default;
     const zip = new JSZip();
     const folder = zip.folder(`${domain}-images`);
-    const saveAs = FileSaverModule.saveAs;
+    const saveAs =  FileSaverModule.default || FileSaverModule.saveAs;
+    if (typeof saveAs !== 'function') {
+      console.error('saveAs is not a function', FileSaverModule);
+      return;
+    }
 
     const addBase64Image = ({ base64Data, index, sizes }: { base64Data: string; index: number, sizes?: string; }) => {
       const data = base64Data.split(',')[1];
