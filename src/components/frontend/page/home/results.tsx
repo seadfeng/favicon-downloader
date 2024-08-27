@@ -23,9 +23,11 @@ const downloadImagesAsZip = (icons: { href: string, sizes?: string }[], domain: 
   Promise.all([
     import('jszip'),
     import('file-saver')
-  ]).then(([JSZip, FileSaver]) => {
-    const zip = new JSZip.default();
+  ]).then(([JSZipModule, FileSaverModule]) => {
+    const JSZip = JSZipModule.default;
+    const zip = new JSZip();
     const folder = zip.folder(`${domain}-images`);
+    const saveAs = FileSaverModule.saveAs;
 
     const addBase64Image = ({ base64Data, index, sizes }: { base64Data: string; index: number, sizes?: string; }) => {
       const data = base64Data.split(',')[1];
@@ -51,7 +53,7 @@ const downloadImagesAsZip = (icons: { href: string, sizes?: string }[], domain: 
 
     Promise.all(imagePromises)
       .then(() => zip.generateAsync({ type: 'blob' }))
-      .then(content => FileSaver.saveAs(content, `${domain}-favicons.zip`))
+      .then(content => saveAs(content, `${domain}-favicons.zip`))
       .catch(error => {
         console.error('Error creating or saving zip:', error);
       });
