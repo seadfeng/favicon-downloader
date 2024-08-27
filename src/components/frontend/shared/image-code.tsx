@@ -3,12 +3,10 @@ import Image from "next/image";
 
 import CodeCopyBtn from "@/components/shared/CodeCopyBtn";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
 const ImageCode = ({ alt, title, src, codeStr, className}: { src: string; codeStr: string; title: string; alt: string; className?: string; }) => {
   const [dimensions, setDimensions] = useState<{ width: number; height: number } | null>(null);
-  const t = useTranslations();
   useEffect(() => {
     if (src) {
       const img = new window.Image();
