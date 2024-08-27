@@ -160,7 +160,7 @@ export function Main({
       </Form>
       {error && <div className="rounded-md border border-red-500 p-10 mb-10">{error}</div>}
       {fetching && <Skeleton className="h-72 w-full rounded-md mb-8" />}  
-      {info && <Results info={info} />}  
+      {info && isBrowser() && <Results info={info} />}  
       {host && isBrowser() && images.map(image => <ImageCode {...image} key={image.src} />)} 
       {block1 && <Markdown content={block1} className="mt-10" />}
       <Faqs faqs={faqs} title={t('frontend.home.faq.title')} />
