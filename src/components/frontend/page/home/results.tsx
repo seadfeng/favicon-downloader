@@ -1,3 +1,4 @@
+"use client";
 import { Button } from '@/components/ui/button';
 import { downloadBase64Image, getBase64MimeType } from '@/lib/utils';
 import { ResponseInfo } from '@/types';
