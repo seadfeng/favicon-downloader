@@ -132,9 +132,6 @@ export function Main({
     },
   ]; 
 
-  // debug
-  console.log("isBrowser", isBrowser());
-
   return (
     <div className={cn("max-w-4xl mx-auto w-full leading-9 text-base")}> 
       <h1 className="text-4xl mb-2 font-extrabold">{appConfig.appName}</h1>
