@@ -132,6 +132,9 @@ export function Main({
     },
   ]; 
 
+  // debug
+  console.log("isBrowser", isBrowser());
+
   return (
     <div className={cn("max-w-4xl mx-auto w-full leading-9 text-base")}> 
       <h1 className="text-4xl mb-2 font-extrabold">{appConfig.appName}</h1>
@@ -161,7 +164,7 @@ export function Main({
       {error && <div className="rounded-md border border-red-500 p-10 mb-10">{error}</div>}
       {fetching && <Skeleton className="h-72 w-full rounded-md mb-8" />}  
       {info && isBrowser() && <Results info={info} />}  
-      {host && isBrowser() && images.map(image => <ImageCode {...image} key={image.src} />)} 
+      {host && images.map(image => <ImageCode {...image} key={image.src} />)} 
       {block1 && <Markdown content={block1} className="mt-10" />}
       <Faqs faqs={faqs} title={t('frontend.home.faq.title')} />
     </div>
