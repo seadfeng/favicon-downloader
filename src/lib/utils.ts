@@ -1,6 +1,8 @@
 import { appConfig, LocaleType } from "@/config";
 import { ResponseInfo } from "@/types";
 import { type ClassValue, clsx } from "clsx";
+import { saveAs } from 'file-saver';
+import JSZip from 'jszip';
 import { NextRequest } from "next/server";
 import { twMerge } from "tailwind-merge";
 
@@ -152,6 +154,63 @@ export const proxyFavicon = async ({ domain, request }: { domain: string; reques
 
 };
 
+function fetchImage(url: string): Promise<{ blob: Blob, extension: string }> {
+  return fetch(url).then(response => {
+    const contentType = response.headers.get('Content-Type') || '';
+    const extension = contentType.split('/')[1] || 'png'; // Default to 'png' if content type is missing
+    return response.blob().then(blob => ({ blob, extension }));
+  });
+}
+
+function addBase64Image({ zip, base64Data, domain, index, sizes }: { zip: JSZip; base64Data: string; domain: string; index: number, sizes?: string; }) {
+  const data = base64Data.split(',')[1]; // Remove the base64 metadata
+  const extension = getBase64MimeType(base64Data);
+  const filename = `favicon-${domain}-${index + 1}-${sizes}.${extension}`;
+  zip.file(filename, data, { base64: true });
+}
+
+function addUrlImage({ zip, href, domain, index, sizes }: { zip: JSZip; href: string; domain: string; index: number, sizes?: string; }): Promise<void> {
+  return fetchImage(href).then(({ blob, extension }) => {
+    const filename = `favicon-${domain}-${index + 1}-${sizes}.${extension}`;
+    zip.file(filename, blob);
+  });
+}
+
+export const downloadImagesAsZip = async (icons: { href: string, sizes?: string }[], domain: string) => {
+  const zip = new JSZip();
+  const folder = zip.folder(`${domain}-images`);
+
+  const imagePromises = icons.map(async ({ href, sizes }, index) => {
+    if (/^data:image\//.test(href)) {
+      return addBase64Image({ zip: folder!, base64Data: href, domain, index, sizes });
+    } else {
+      return await addUrlImage({ zip: folder!, href, domain, index, sizes });
+    }
+  });
+
+  // Handle Promise.all for all URL images and generate the zip
+  Promise.all(imagePromises).then(() => {
+    zip.generateAsync({ type: 'blob' }).then(content => {
+      saveAs(content, `${domain}-favicons.zip`);
+    });
+  });
+}
+
+export const downloadBase64Image = ({ base64Data, domain }: { base64Data: string, domain: string }) => {
+  const link = document.createElement('a');
+
+  let imgType = getBase64MimeType(base64Data)
+
+  link.href = base64Data;
+
+  link.download = `favicon-${domain}.${imgType}`;
+
+  document.body.appendChild(link);
+
+  link.click();
+
+  document.body.removeChild(link);
+}
 export const getBase64MimeType = (base64Data: string): string => {
   const mimeTypeMatch = base64Data.match(/^data:(image\/[\w+]+);base64,/);
 
