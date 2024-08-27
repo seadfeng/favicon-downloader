@@ -1,16 +1,17 @@
 "use client";
 import { Skeleton } from "@/components/ui/skeleton";
+import { isBrowser } from "@/lib/utils";
 import dynamic from 'next/dynamic';
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const CodeCopyBtn = dynamic(() => import('@/components/shared/CodeCopyBtn'), { ssr: false })
-
+const CodeCopyBtn = dynamic(() => import('@/components/shared/CodeCopyBtn'), { ssr: false });
 
 const ImageCode = ({ alt, title, src, codeStr, className}: { src: string; codeStr: string; title: string; alt: string; className?: string; }) => {
   const [dimensions, setDimensions] = useState<{ width: number; height: number } | null>(null);
+
   useEffect(() => {
-    if (src) {
+    if (src && isBrowser()) {
       const img = new window.Image();
       img.src = src;
       img.onload = () => {
