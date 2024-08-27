@@ -199,7 +199,7 @@ export const getImageMimeType = (contentType: string) => {
   return imgType;
 }
 export const getBase64MimeType = (base64Data: string): string => {
-  const mimeTypeMatch = base64Data.match(/^data:(image\/[\w+]+);base64,/);
+  const mimeTypeMatch = base64Data.match(/^data:(image\/.*?);base64,/);
 
   if (mimeTypeMatch && mimeTypeMatch[1]) {
     return getImageMimeType(mimeTypeMatch[1])
