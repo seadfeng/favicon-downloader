@@ -1,6 +1,6 @@
 "use client";
 import { Button } from '@/components/ui/button';
-import { downloadBase64Image, getBase64MimeType, getImageMimeType } from '@/lib/utils';
+import { downloadBase64Image, getBase64MimeType, getImageMimeType, isBrowser } from '@/lib/utils';
 import { ResponseInfo } from '@/types';
 import { saveAs } from 'file-saver';
 import JSZip from 'jszip';
@@ -51,9 +51,7 @@ const downloadImagesAsZip = async (icons: { href: string, sizes?: string }[], do
   });
 }
 
-function isBrowser() {
-  return typeof window !== 'undefined' && typeof navigator !== 'undefined';
-}
+
 const IconImage = ({ icon, index, onLoad, domain }: { icon: any; index: number; domain: string; onLoad?: (sizes: string)=> void  }) => { 
   if (!isBrowser()) {
     return null;
@@ -62,7 +60,7 @@ const IconImage = ({ icon, index, onLoad, domain }: { icon: any; index: number; 
   const imgRef = useRef<HTMLImageElement>(null);
   const t = useTranslations();
   useEffect(() => {
-    if (isBrowser() && imgRef.current) {
+    if (imgRef.current) {
       const img = imgRef.current;
       const handleImageLoad = () => {
         setSizes(`${img.naturalWidth}x${img.naturalHeight}`);

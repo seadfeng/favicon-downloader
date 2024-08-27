@@ -6,7 +6,9 @@ import { twMerge } from "tailwind-merge";
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
-
+export function isBrowser() {
+  return typeof window !== 'undefined' && window.navigator != null;
+}
 export const getOrigin = ({ headers }: { headers: Headers }) => {
   const url = new URL(headers.get("x-request-url")!);
   return `${url.protocol}//${url.host}`;
