@@ -40,22 +40,6 @@ export const createAlternates = ({ headers }: { headers: Headers; }) => {
   }
 }
 
-export const downloadBase64Image = ({ base64Data, domain }: { base64Data: string, domain: string }) => {
-  const link = document.createElement('a');
-
-  let imgType = getBase64MimeType(base64Data)
-
-  link.href = base64Data;
-
-  link.download = `favicon-${domain}.${imgType}`;
-
-  document.body.appendChild(link);
-
-  link.click();
-
-  document.body.removeChild(link);
-}
-
 export const getImageMimeType = (contentType: string) => {
   let imgType = 'png';
   switch (contentType) {

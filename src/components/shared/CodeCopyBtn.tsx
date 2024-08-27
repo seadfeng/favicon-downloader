@@ -14,7 +14,7 @@ export default function CodeCopyBtn({ children, className }: CodeCopyBtnProps) {
   const styles: React.CSSProperties = { position: 'absolute', right: '20px', top: '10px' };
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (typeof children === 'string') {
+    if (typeof children === 'string' && typeof navigator !== 'undefined' && navigator.clipboard) {
       navigator.clipboard.writeText(children);
       console.log('Copied!');
 

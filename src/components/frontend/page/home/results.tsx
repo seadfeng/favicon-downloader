@@ -1,13 +1,12 @@
 "use client";
 import { Button } from '@/components/ui/button';
-import { downloadBase64Image, getBase64MimeType, getImageMimeType, isBrowser } from '@/lib/utils';
+import { getBase64MimeType, getImageMimeType, isBrowser } from '@/lib/utils';
 import { ResponseInfo } from '@/types';
 import { saveAs } from 'file-saver';
 import JSZip from 'jszip';
 import { SearchCheckIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useEffect, useRef, useState } from 'react';
-
 
 function fetchImage(url: string): Promise<{ blob: Blob, extension: string }> {
   return fetch(url).then(response => {
@@ -53,14 +52,27 @@ const downloadImagesAsZip = async (icons: { href: string, sizes?: string }[], do
 
 
 const IconImage = ({ icon, index, onLoad, domain }: { icon: any; index: number; domain: string; onLoad?: (sizes: string)=> void  }) => { 
-  if (!isBrowser()) {
-    return null;
-  }
   const [sizes, setSizes] = useState<string>(icon.sizes);
   const imgRef = useRef<HTMLImageElement>(null);
   const t = useTranslations();
+  const downloadBase64Image = ({ base64Data, domain }: { base64Data: string, domain: string }) => {
+    const link = document.createElement('a');
+  
+    let imgType = getBase64MimeType(base64Data)
+  
+    link.href = base64Data;
+  
+    link.download = `favicon-${domain}.${imgType}`;
+  
+    document.body.appendChild(link);
+  
+    link.click();
+  
+    document.body.removeChild(link);
+  }
+  
   useEffect(() => {
-    if (imgRef.current) {
+    if (isBrowser() && imgRef.current) {
       const img = imgRef.current;
       const handleImageLoad = () => {
         setSizes(`${img.naturalWidth}x${img.naturalHeight}`);
