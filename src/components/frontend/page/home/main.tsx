@@ -13,7 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { appConfig } from "@/config";
 import apiClient from "@/lib/api";
-import { cn } from "@/lib/utils";
+import { cn, isBrowser } from "@/lib/utils";
 import { ResponseInfo } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
@@ -161,7 +161,7 @@ export function Main({
       {error && <div className="rounded-md border border-red-500 p-10 mb-10">{error}</div>}
       {fetching && <Skeleton className="h-72 w-full rounded-md mb-8" />}  
       {info && <Results info={info} />}  
-      {host && images.map(image => <ImageCode {...image} key={image.src} />)} 
+      {host && isBrowser() && images.map(image => <ImageCode {...image} key={image.src} />)} 
       {block1 && <Markdown content={block1} className="mt-10" />}
       <Faqs faqs={faqs} title={t('frontend.home.faq.title')} />
     </div>
