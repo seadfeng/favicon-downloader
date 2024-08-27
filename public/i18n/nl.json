@@ -33,7 +33,8 @@
       "check": "Rekening",
       "download": "Downloaden",
       "results_for": "Favicons voor",
-      "get_favicons": "Favicons verkrijgen"
+      "get_favicons": "Favicons verkrijgen",
+      "download_zip": "Zip downloaden"
     },
     "meta": {
       "default": {

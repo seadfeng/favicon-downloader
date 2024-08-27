@@ -1,59 +1,55 @@
-import { ResponseInfo } from "@/types";
-import { SearchCheckIcon } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { Button } from '@/components/ui/button';
+import { getBase64MimeType } from '@/lib/utils';
+import { ResponseInfo } from '@/types';
+import { saveAs } from 'file-saver';
+import JSZip from 'jszip';
+import { SearchCheckIcon } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { useEffect, useRef, useState } from 'react';
 
-function downloadBase64Image({ base64Data, domain }: { base64Data: string, domain: string }) { 
-  const link = document.createElement('a');
- 
-  const mimeTypeMatch = base64Data.match(/^data:(image\/[\w+]+);base64,/);
-  
-  let imgType = 'png';  
-  if (mimeTypeMatch && mimeTypeMatch[1]) {
-    const mimeType = mimeTypeMatch[1];
-    switch (mimeType) {
-      case 'image/jpeg':
-        imgType = 'jpg';
-        break;
-      case 'image/png':
-        imgType = 'png';
-        break;
-      case 'image/gif':
-        imgType = 'gif';
-        break;
-      case 'image/webp':
-        imgType = 'webp';
-        break;
-      case 'image/bmp':
-        imgType = 'bmp';
-        break;
-      case 'image/tiff':
-        imgType = 'tiff';
-        break;
-      case 'image/svg+xml':
-        imgType = 'svg';
-        break;
-      default:
-        console.warn(`Unsupported image type: ${mimeType}. Defaulting to png.`);
-        imgType = 'png';
-    }
-  } else {
-    console.warn('Could not determine image type from base64 data. Defaulting to png.');
-  }
- 
-  link.href = base64Data;
- 
-  link.download = `favicon-${domain}.${imgType}`;
- 
-  document.body.appendChild(link);
- 
-  link.click();
- 
-  document.body.removeChild(link);
+function fetchImage(url: string): Promise<{ blob: Blob, extension: string }> {
+  return fetch(url).then(response => {
+    const contentType = response.headers.get('Content-Type') || '';
+    const extension = contentType.split('/')[1] || 'png'; // Default to 'png' if content type is missing
+    return response.blob().then(blob => ({ blob, extension }));
+  });
 }
 
-const IconImage = ({ icon, index, domain }: { icon: any; index: number; domain: string; }) => {
-  const t = useTranslations();
+function addBase64Image({ zip, base64Data, domain, index, sizes}:{zip: JSZip; base64Data: string; domain: string; index: number, sizes?: string;} ) {
+  const data = base64Data.split(',')[1]; // Remove the base64 metadata
+  const extension =  getBase64MimeType(base64Data);
+  const filename = `favicon-${domain}-${index + 1}-${sizes}.${extension}`;
+  zip.file(filename, data, { base64: true });
+}
+
+function addUrlImage({ zip, href, domain, index, sizes }:{zip: JSZip; href: string; domain: string; index: number, sizes?: string;}): Promise<void> {
+  return fetchImage(href).then(({ blob, extension }) => {
+    const filename = `favicon-${domain}-${index + 1}-${sizes}.${extension}`; 
+    zip.file(filename, blob);
+  });
+}
+
+const downloadImagesAsZip = async(icons: { href: string, sizes?: string }[], domain: string) => {
+  const zip = new JSZip();
+  const folder = zip.folder(`${domain}-images`);
+
+  const imagePromises = icons.map(async ({ href, sizes }, index) => {  
+    if (/^data:image\//.test(href)) {
+      return addBase64Image({zip: folder!, base64Data: href, domain, index, sizes});
+    } else {
+      return await addUrlImage({zip: folder!, href, domain, index, sizes} );
+    }
+  });
+
+  // Handle Promise.all for all URL images and generate the zip
+  Promise.all(imagePromises).then(() => {
+    zip.generateAsync({ type: 'blob' }).then(content => {
+      saveAs(content, `${domain}-favicons.zip`);
+    });
+  });
+}
+
+const IconImage = ({ icon, index, onLoad}: { icon: any; index: number; onLoad: (sizes: string)=> void  }) => { 
   const [sizes, setSizes] = useState<string>(icon.sizes);
   const imgRef = useRef<HTMLImageElement>(null);
 
@@ -62,6 +58,7 @@ const IconImage = ({ icon, index, domain }: { icon: any; index: number; domain: 
       const img = imgRef.current;
       const handleImageLoad = () => {
         setSizes(`${img.naturalWidth}x${img.naturalHeight}`);
+        if(onLoad) onLoad(`${img.naturalWidth}x${img.naturalHeight}`);
       };
 
       img.addEventListener('load', handleImageLoad);
@@ -78,7 +75,7 @@ const IconImage = ({ icon, index, domain }: { icon: any; index: number; domain: 
       <div className="flex">
         <a href={icon.href} target="_blank" rel="noopener noreferrer">
           <img
-            ref={imgRef} // Attach ref to the img element
+            ref={imgRef}
             src={icon.href}
             className="h-[50px] w-[50px]"
             alt={`Icon ${index + 1}`}
@@ -88,33 +85,53 @@ const IconImage = ({ icon, index, domain }: { icon: any; index: number; domain: 
           <span className="w-full">
             {index + 1}. Sizes {sizes}
           </span>
-          <a href={ /^data:image\//.test(icon.href) ? icon.href : `/download/${icon.href}`} onClick={(e)=>{ 
-            if( /^data:image\//.test(icon.href) ){
-              e.preventDefault();
-              downloadBase64Image({domain , base64Data: icon.href} ) 
-            } 
-          }} target="_blank" rel="noopener noreferrer" className="text-primary text-sm mt-auto">
-            {t('frontend.home.download')}
-          </a>
         </div>
       </div>
     </div>
   );
 };
 
-export const Results = ({ info }: { info: ResponseInfo }) => {   
-  const t = useTranslations(); 
+export const Results = ({ info }: { info: ResponseInfo }) => {
+  const t = useTranslations();
+  const [iconInfo, setIconInfo] = useState<ResponseInfo>(info);
 
-  return ( 
+  const handleDownloadZip = () => {
+    downloadImagesAsZip(info.icons, info.host);
+  };
+
+  // update icon sizes
+  const iconOnLoad=({sizes, iconIndex}:{sizes: string; iconIndex: number})=>{
+    setIconInfo({
+      ...iconInfo,
+      icons: iconInfo.icons.map((icon, index) =>{
+        if(index === iconIndex){
+          return {...icon, sizes: sizes}
+        }else{
+          return icon
+        }
+      })
+    })
+  }
+
+  return (
     <div className="bg-secondary/60 p-5 text-xl flex flex-col gap-5 mb-10 rounded-md">
-      <div className="font-semibold flex items-center">{t('frontend.home.results_for')}: {info.host} <SearchCheckIcon size={28} className="ml-2 text-green-700" /></div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-      {info.icons.map((icon, index) =>
-        <div key={index}> 
-          <IconImage icon={icon} index={index} domain={ info.host }/>
-        </div> 
-      )}
+      <div className="font-semibold flex items-center">
+        {t('frontend.home.results_for')}: {iconInfo.host}
+        <SearchCheckIcon size={28} className="ml-2 text-green-700" />
       </div>
-    </div> 
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {iconInfo.icons.map((icon, index) =>
+          <div key={index}>
+            <IconImage icon={icon} index={index} onLoad={(sizes)=>{ iconOnLoad({ sizes, iconIndex: index  }) }} />
+          </div>
+        )}
+      </div>
+      <Button
+        onClick={handleDownloadZip} 
+        className="rounded-md w-[50%] mx-auto font-semibold"
+      >
+        {t('frontend.home.download_zip')}
+      </Button>
+    </div>
   );
-}
+};

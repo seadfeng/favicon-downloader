@@ -45,7 +45,8 @@
       "default_size_alt": "{domain} favicon",
       "larger_size_alt": "{domain} favicon (larger)",
       "larger_size": "Larger Size",
-      "get_favicons": "Get Favicons"
+      "get_favicons": "Get Favicons",
+      "download_zip": "Download Zip"
     }
   },
   "shared": {

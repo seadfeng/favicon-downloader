@@ -33,7 +33,8 @@
       "check": "Kontrol etmek",
       "download": "İndirmek",
       "results_for": "Favicon'lar",
-      "get_favicons": "Favicon'ları Alın"
+      "get_favicons": "Favicon'ları Alın",
+      "download_zip": "Zip'i İndir"
     },
     "meta": {
       "default": {

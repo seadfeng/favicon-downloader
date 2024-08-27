@@ -33,7 +33,8 @@
       "check": "Kontrollera",
       "download": "Ladda ner",
       "results_for": "Favoriter för",
-      "get_favicons": "Skaffa favoriter"
+      "get_favicons": "Skaffa favoriter",
+      "download_zip": "Ladda ner Zip"
     },
     "meta": {
       "default": {

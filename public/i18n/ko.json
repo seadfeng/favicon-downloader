@@ -33,7 +33,8 @@
       "check": "확인하다",
       "download": "다운로드",
       "results_for": "파비콘",
-      "get_favicons": "파비콘 받기"
+      "get_favicons": "파비콘 받기",
+      "download_zip": "우편번호 다운로드"
     },
     "meta": {
       "default": {

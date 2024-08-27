@@ -33,7 +33,8 @@
       "check": "Verificar",
       "download": "Download",
       "results_for": "Favoritos para",
-      "get_favicons": "Obtenha ícones favoritos"
+      "get_favicons": "Obtenha ícones favoritos",
+      "download_zip": "Baixar Zip"
     },
     "meta": {
       "default": {

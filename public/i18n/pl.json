@@ -33,7 +33,8 @@
       "check": "Sprawdzać",
       "download": "Pobierać",
       "results_for": "Favicony dla",
-      "get_favicons": "Zdobądź Favicony"
+      "get_favicons": "Zdobądź Favicony",
+      "download_zip": "Pobierz Zipa"
     },
     "meta": {
       "default": {

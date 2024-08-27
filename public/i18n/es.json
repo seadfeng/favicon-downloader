@@ -45,7 +45,8 @@
       "larger_size": "Tamaño más grande",
       "default_size_alt": "{dominio} favicon",
       "larger_size_alt": "{dominio} favicon (más grande)",
-      "get_favicons": "Obtener favicons"
+      "get_favicons": "Obtener favicons",
+      "download_zip": "Descargar Zip"
     }
   },
   "shared": {

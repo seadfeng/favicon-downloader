@@ -33,7 +33,8 @@
       "check": "Controllo",
       "download": "Scaricamento",
       "results_for": "Favicon per",
-      "get_favicons": "Ottieni Favicon"
+      "get_favicons": "Ottieni Favicon",
+      "download_zip": "Scarica Zip"
     },
     "meta": {
       "default": {
