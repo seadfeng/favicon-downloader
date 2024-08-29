@@ -67,7 +67,10 @@ export const proxyFavicon = async ({ domain, request }: { domain: string; reques
     `https://icons.duckduckgo.com/ip3/${domain}.ico`
     // `https://icon.horse/icon/${domain}`
   ];
-  let response: Response = new Response();
+  let response: Response = new Response("", {
+    status: 500
+  });
+
   // Attempt to fetch favicon from each source
   for (const source of sources) {
     try {
