@@ -97,11 +97,27 @@ export async function GET(request: NextRequest, { params: { domain } }: { params
       });
     }
     const iconResponse = await fetch(selectedIcon.href, { headers });
-    const iconBuffer = await iconResponse.arrayBuffer();
-
     // Calculate execution time
     const endTime = Date.now();
     const executionTime = endTime - startTime;
+    if (!iconResponse.ok) {
+      const firstLetter = domain.charAt(0).toUpperCase();
+      const svgContent = `
+        <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100%" height="100%" fill="#cccccc"/>
+          <text x="50%" y="50%" font-size="48" text-anchor="middle" dominant-baseline="middle" fill="#000000">${firstLetter}</text>
+        </svg>
+      `;
+      return new Response(svgContent, {
+        status: 404,
+        headers: {
+          'Cache-Control': 'public, max-age=86400',
+          'Content-Type': 'image/svg+xml',
+          'X-Execution-Time': `${executionTime}ms`
+        }
+      });
+    }
+    const iconBuffer = await iconResponse.arrayBuffer();
 
     // Return the image response with execution time
     return new Response(iconBuffer, {
