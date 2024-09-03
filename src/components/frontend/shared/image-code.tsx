@@ -2,7 +2,6 @@
 import CodeCopyBtn from "@/components/shared/CodeCopyBtn";
 import { Skeleton } from "@/components/ui/skeleton";
 import { isBrowser } from "@/lib/utils";
-import Image from "next/image";
 import { useEffect, useState } from "react";
  
 
@@ -36,7 +35,7 @@ const ImageCode = ({ alt, title, src, codeStr, className}: { src: string; codeSt
     <div className={className}>
       <h2 className="text-2xl font-semibold">{title}:</h2>
       <div className="max-w-[300px] my-5">
-        <Image 
+        <img 
           src={src} 
           alt={alt} 
           width={dimensions.width} 
