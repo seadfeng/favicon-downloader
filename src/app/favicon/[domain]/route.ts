@@ -38,6 +38,7 @@ export async function GET(request: NextRequest, { params: { domain } }: { params
 
   // Initialize headers, excluding 'Content-Length'
   const headers = new Headers(request.headers);
+  headers.delete('host');
   headers.delete('Content-Length');
 
   let url = `http://${asciiDomain}`;
