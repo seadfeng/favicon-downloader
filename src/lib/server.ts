@@ -1,5 +1,4 @@
 import { ResponseInfo } from "@/types";
-import { NextRequest } from "next/server";
 
 // Fetch favicons from a given URL and return ResponseInfo
 export const getFavicons = async ({ url, headers }: { url: string, headers?: Headers }): Promise<ResponseInfo> => {
@@ -60,7 +59,7 @@ export const getFavicons = async ({ url, headers }: { url: string, headers?: Hea
 };
 
 // Function to fetch favicon from alternative sources
-export const proxyFavicon = async ({ domain, request }: { domain: string; request: NextRequest }) => {
+export const proxyFavicon = async ({ domain }: { domain: string; }) => {
   // List of alternative sources to fetch favicons
   const sources = [
     `https://www.google.com/s2/favicons?domain=${domain}`,
@@ -75,8 +74,6 @@ export const proxyFavicon = async ({ domain, request }: { domain: string; reques
   for (const source of sources) {
     try {
       response = await fetch(source, {
-        method: request.method,
-        headers: request.headers,
         redirect: 'follow'
       });
       if (response.ok) {

@@ -64,7 +64,7 @@ export async function GET(request: NextRequest, { params: { domain } }: { params
 
   // If no icons are found, fetch from alternative sources
   if (icons.length === 0) {
-    return proxyFavicon({ domain: asciiDomain, request });
+    return proxyFavicon({ domain: asciiDomain });
   }
 
   // Select the appropriate icon based on the 'larger' parameter
