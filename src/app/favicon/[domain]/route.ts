@@ -24,8 +24,6 @@ export async function GET(request: NextRequest, { params: { domain } }: { params
     console.log("Ico source:", duckduckgoUrl);
     try {
       const response = await fetch(duckduckgoUrl, {
-        method: request.method,
-        headers: request.headers,
         redirect: 'follow'
       });
       if (response.ok) {
