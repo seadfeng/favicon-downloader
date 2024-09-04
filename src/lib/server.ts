@@ -47,8 +47,8 @@ export const getFavicons = async ({ url, headers }: { url: string, headers?: Hea
       statusText: response.statusText,
       icons
     };
-  } catch (error) {
-    console.error(`Error fetching favicons: ${error}`);
+  } catch (error: any) {
+    console.error(`Error fetching favicons: ${error.message}`);
     return {
       url: newUrl.href,
       host: newUrl.host,
@@ -85,8 +85,8 @@ export const proxyFavicon = async ({ domain, request }: { domain: string; reques
 
       console.log("icon source:", source);
 
-    } catch (error) {
-      console.error(`Error fetching proxy favicon: ${error}`);
+    } catch (error: any) {
+      console.error(`Error fetching proxy favicon: ${error.message}`);
     }
   }
   if (!response.ok) {

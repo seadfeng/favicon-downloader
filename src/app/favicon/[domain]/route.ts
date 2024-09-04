@@ -32,7 +32,7 @@ export async function GET(request: NextRequest, { params: { domain } }: { params
         return response;
       }
     } catch (error: any) {
-      console.error(error.message);
+      console.error("duckduckgo larger", error.message);
     }
   }
 

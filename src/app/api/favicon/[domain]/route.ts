@@ -31,8 +31,8 @@ export async function GET(request: NextRequest, { params }: { params: { domain: 
     data = await getFavicons({ url });
     if (data.status === 530) return handleResponse(data, 530, 'Error 530');
     if (data.icons.length > 0) return handleResponse(data, 200, 'ok');
-  } catch (error) {
-    console.error('Error fetching HTTP favicons:', error);
+  } catch (error: any) {
+    console.error('Error fetching HTTP favicons:', error.message);
   }
 
   // Retry with HTTPS
@@ -41,8 +41,8 @@ export async function GET(request: NextRequest, { params }: { params: { domain: 
     data = await getFavicons({ url });
     if (data.status === 530) return handleResponse(data, 530, 'Error 530');
     if (data.icons.length > 0) return handleResponse(data, 200, 'ok');
-  } catch (error) {
-    console.error('Error fetching HTTPS favicons:', error);
+  } catch (error: any) {
+    console.error('Error fetching HTTPS favicons:', error.message);
   }
 
   // Try alternative sources
@@ -64,8 +64,8 @@ export async function GET(request: NextRequest, { params }: { params: { domain: 
       if (response.ok) {
         icons.push({ href: source, sizes: "unknown" });
       }
-    } catch (error) {
-      console.error(`Error fetching from ${source}: ${error}`);
+    } catch (error: any) {
+      console.error(`Error fetching from ${source}: ${error.message}`);
     }
   }
 
