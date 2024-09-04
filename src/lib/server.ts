@@ -77,13 +77,11 @@ export const proxyFavicon = async ({ domain }: { domain: string; }) => {
         redirect: 'follow'
       });
       if (response.ok) {
+        console.log("icon source ok:", source);
         break;
       }
-
-      console.log("icon source:", source);
-
     } catch (error: any) {
-      console.error(`Error fetching proxy favicon: ${error.message}`);
+      console.error(`Error fetching proxy favicon: ${error.message}`, source);
     }
   }
   if (!response.ok) {
@@ -95,7 +93,7 @@ export const proxyFavicon = async ({ domain }: { domain: string; }) => {
       </svg>
     `;
     return new Response(svgContent, {
-      status: 200,
+      status: 404,
       headers: {
         'Cache-Control': 'public, max-age=86400',
         'Content-Type': 'image/svg+xml'
