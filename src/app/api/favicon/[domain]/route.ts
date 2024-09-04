@@ -61,7 +61,7 @@ export async function GET(request: NextRequest, { params }: { params: { domain: 
         redirect: 'follow'
       });
 
-      if (response.status === 200) {
+      if (response.ok) {
         icons.push({ href: source, sizes: "unknown" });
       }
     } catch (error) {

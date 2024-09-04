@@ -28,7 +28,7 @@ export async function GET(request: NextRequest, { params: { domain } }: { params
         headers: request.headers,
         redirect: 'follow'
       });
-      if (response.status === 200) {
+      if (response.ok) {
         return response;
       }
     } catch (error: any) {
