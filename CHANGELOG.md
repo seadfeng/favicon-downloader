@@ -1,5 +1,9 @@
 # CHANGELOG
 
+# 0.2.8.rc
+
+/favicon/[domain] return 404 svg icon
+
 # 0.2.5.rc
 
 Fix https://github.com/seadfeng/favicon-downloader/issues/9

@@ -9,8 +9,8 @@ export async function GET(request: NextRequest, { params }: { params: { domain: 
   const { domain } = params;
 
   // Validate domain name format
-  if (!/^(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$/.test(domain)) {
-    return new Response('Invalid domain name format', { status: 400 });
+  if (!/([a-z0-9-]+\.)+[a-z0-9]{1,}$/.test(domain)) {
+    return new Response(`Invalid domain name format${domain}`, { status: 400 });
   }
 
   // Define a helper function to handle the response

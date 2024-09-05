@@ -3,6 +3,7 @@ import { ResponseInfo } from '@/types';
 import type { NextRequest } from 'next/server';
 export const runtime = 'edge';
 
+
 export async function GET(request: NextRequest, { params: { domain } }: { params: { domain: string } }) {
   let icons: { sizes?: string; href: string }[] = [];
   const larger: boolean = request.nextUrl.searchParams.get('larger') === 'true'; // Get the 'larger' parameter
@@ -14,10 +15,28 @@ export async function GET(request: NextRequest, { params: { domain } }: { params
   // Convert the domain to ASCII encoding using URL API
   const asciiDomain = new URL(`http://${domain}`).hostname;
 
-  // Validate domain name format
-  if (!/^(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$/.test(asciiDomain)) {
-    return new Response('Invalid domain name format', { status: 400 });
+  const svg404 = () => {
+    const firstLetter = domain.charAt(0).toUpperCase();
+    const svgContent = `
+        <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100%" height="100%" fill="#cccccc"/>
+          <text x="50%" y="50%" font-size="48" text-anchor="middle" dominant-baseline="middle" fill="#000000">${firstLetter}</text>
+        </svg>
+      `;
+    return new Response(svgContent, {
+      status: 404,
+      headers: {
+        'Cache-Control': 'public, max-age=86400',
+        'Content-Type': 'image/svg+xml'
+      }
+    });
   }
+
+  // Validate domain name format
+  if (!/([a-z0-9-]+\.)+[a-z0-9]{1,}$/.test(asciiDomain)) {
+    return svg404();
+  }
+
 
   if (larger) {
     const duckduckgoUrl = `https://icons.duckduckgo.com/ip3/${asciiDomain}.ico`;
@@ -99,23 +118,7 @@ export async function GET(request: NextRequest, { params: { domain } }: { params
     // Calculate execution time
     const endTime = Date.now();
     const executionTime = endTime - startTime;
-    if (!iconResponse.ok) {
-      const firstLetter = domain.charAt(0).toUpperCase();
-      const svgContent = `
-        <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-          <rect width="100%" height="100%" fill="#cccccc"/>
-          <text x="50%" y="50%" font-size="48" text-anchor="middle" dominant-baseline="middle" fill="#000000">${firstLetter}</text>
-        </svg>
-      `;
-      return new Response(svgContent, {
-        status: 404,
-        headers: {
-          'Cache-Control': 'public, max-age=86400',
-          'Content-Type': 'image/svg+xml',
-          'X-Execution-Time': `${executionTime}ms`
-        }
-      });
-    }
+    if (!iconResponse.ok) return svg404();
     const iconBuffer = await iconResponse.arrayBuffer();
 
     // Return the image response with execution time
