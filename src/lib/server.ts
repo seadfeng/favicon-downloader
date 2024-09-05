@@ -34,7 +34,7 @@ export const getFavicons = async ({ url, headers }: { url: string, headers?: Hea
       if (href) {
         icons.push({
           sizes: sizes || 'unknown',
-          href: (href.startsWith('http') || href.startsWith('data:image')) ? href : `${responseUrl.protocol}//${responseUrl.host}${href}`
+          href: (href.startsWith('http') || href.startsWith('data:image')) ? href : `${responseUrl.protocol}//${responseUrl.host}${/^\/.*/.test(href) ? href : `/${href}`}`
         });
       }
     });
